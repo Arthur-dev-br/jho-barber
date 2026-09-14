@@ -1,2 +1,5 @@
-``` vendor/ .env .env.backup node_modules/ *.log ```
-
+vendor/
+.env
+.env.backup
+node_modules/
+*.log
