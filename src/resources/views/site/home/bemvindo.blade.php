@@ -1,67 +1,22 @@
-<section class="bem-vindo">
-
-      <div class="site">
-
-
-      <header>
-        <h3>
-          bem-vindo à
-        </h3>
+<section class="historia-jho">
+    <header class="parallax-padrao">
         <h2>
-          Casa do Barista
+            Conheça Jho
         </h2>
-        <p>A Casa do Barista nasceu da vontade de unir pessoas através de algo simples e profundo: o ato de compartilhar uma xícara de café.
+        <h3>
+            suas formações e habilidades
+        </h3>
 
-          Acreditamos no poder das histórias que começam no campo, passam pelo barista e chegam até você em forma de aroma, sabor e sentimento.
+    </header>
 
-          Valorizamos pequenos produtores, técnicas artesanais e processos manuais que resgatam o verdadeiro significado do café brasileiro: riqueza cultural, dedicação e tradição.</p>
-      </header>
+    <div>
+        <p class="wow animate__animated animate__fadeInUp">
+            Formado no instituto embelezze e há 10 anos em sua profissão, Jho é capaz de oferecer uma variedade de serviços que convenham as necessidades de seus clientes, desde cortes de cabelo, barba e penteados, até limpeza facial e barboterapia. Trazendo o conforto e hospitalidade que todo cliente necessita.
+        </p>
 
-      <div class="wow animate__animated animate__fadeInUp">
+        <img class="wow animate__animated animate__fadeInRight" src="assets/Jho_Foto_editada.jpg" alt="foto do barbeiro jhonathan">
+    </div>
 
-        <!-- Primeiro -->
 
-        <article>
-          <h5>
-            2025
-          </h5>
-          <h4>
-            Gastronomia afetiva e autoral
-          </h4>
-          <img src="{{ asset ('barista/assets/coffee.svg') }}" alt="Casa do Barista - Gastronomia afetiva e autoral">
-          <p>
-            Receitas feitas para harmonizar com os cafés, com foco em ingredientes frescos e artesanais.
 
-          </p>
-        </article>
-
-        <!-- Segundo -->
-
-        <article>
-          <h5>2026</h5>
-          <h4>
-            Ambiente pensado para todos os momentos
-          </h4>
-          <img src="{{ asset ('barista/assets/coffee.svg') }}" alt="Casa do Barista - Ambiente pensado para todos os momentos">
-          <p>
-            Encontros, estudos, trabalho, leitura ou simplesmente relaxar.
-          </p>
-        </article>
-
-        <!-- Terceiro -->
-
-        <article>
-          <h5>2027</h5>
-          <h4>
-            Experiências, workshops e degustações
-          </h4>
-          <img src="{{ asset ('barista/assets/coffee.svg') }}" alt="Casa do Barista - Experiências, workshops e degustações">
-          <p>
-            Aprenda mais sobre café com curadoria do nosso barista.
-          </p>
-        </article>
-
-      </div>
-
-       </div>
-    </section>
+</section>
