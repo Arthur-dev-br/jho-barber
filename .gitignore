@@ -3,3 +3,4 @@ vendor/
 .env.backup
 node_modules/
 *.log
+desktop.ini
