@@ -2,10 +2,10 @@
 
 @section('content')
 
-<section class="cardapio">
+<section class="produto">
       <header class="parallax-padrao">
         <h2>
-          Cardápio | {{$categoriaSelecionada->nome_categoria}}
+          Produto | {{$categoriaSelecionada->nome_categoria}}
         </h2>
 
         
@@ -15,7 +15,7 @@
             @foreach($listaCategorias as $linha)
               <ul class="botao-categorias">
                   <li>
-                      <a href=" {{route('cardapio.categoria',$linha->id_categoria)}} ">{{$linha->nome_categoria}}</a>
+                      <a href=" {{route('produto.categoria',$linha->id_categoria)}} ">{{$linha->nome_categoria}}</a>
                   </li>
               </ul>
             @endforeach
@@ -23,7 +23,7 @@
         
         
       </header>
-      <div class=" site card-cardapio">
+      <div class=" site card-produto">
 
         @foreach($produtos as $linha)
 
@@ -53,7 +53,7 @@
 
       </div>
       
-      <!-- <div class="site btn-cardapio">
+      <!-- <div class="site btn-produto">
         <a class="btn" href="#">Veja mais</a>
       </div> -->
      

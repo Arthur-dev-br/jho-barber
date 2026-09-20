@@ -66,7 +66,7 @@ class BannerController extends Controller
             $nomeImg = $tituloimg . '_' . $banner->id_banner . '.' . $extensao;
 
             // 7- Salvar a imagem na pasta do projeto
-            $pasta = public_path('barista/assets/banner');
+            $pasta = public_path('jho_barber/assets/banner');
 
             // 8- se a pasta não existir, criar a pasta
             if(!is_dir($pasta)){

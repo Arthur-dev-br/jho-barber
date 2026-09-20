@@ -4,5 +4,3 @@
   @endforeach
 </section>
 
-
-

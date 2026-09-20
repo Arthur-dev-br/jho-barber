@@ -1,49 +1,40 @@
-<section class="equipe">
-      <header class="parallax-padrao">
-        <h2>
-          Quem somos
-        </h2>
-        <h3>
-          Conheça nossa equipe
-        </h3>
-      </header>
+ <section class="agendamentos">
+            <header>
+                <div class="parallax-padrao">
+                    
+                    <h2>
+                        Agendamentos
+                    </h2>
+                    <h3>
+                        Entenda como agendar conosco
+                    </h3>
+                </div>
+                <div class="textao wow animate__animated animate__fadeInUp animate__delay-1s">
+                    <ol>
+                        <li>
+                            1.Baixe pela Playstore ou AppStore
+                        </li>
+                        <li>
+                            2.Clique em "iniciar novo agendamento"
+                        </li>
+                        <li>
+                            3.Coloque nosso número (+55 11 95887-1348)
+                        </li>
+                        <li>
+                            4.Pronto! agora é só agendar em Jho's Barbershop.
+                        </li>
 
-      <div class="site card wow animate__animated animate__fadeInUp">
-        <article>
-          <img src="{{ asset ('barista/assets/barista1.png') }}" alt="Funcionario">
-          <h5>
-            Lucas Souza
-          </h5>
-          <h4>
-            Trabalhamos com fazendas familiares e microlotes que garantem qualidade e história.
-          </h4>
-         
-        </article>
+                    </ol>
 
-         <article>
-          <img src="{{ asset ('barista/assets/barista2.png') }}" alt="Funcionario">
-          <h5>
-            Nicole Costa
-          </h5>
-          <h4>
-            Trabalhamos com fazendas familiares e microlotes que garantem qualidade e história.
-          </h4>
-         
-        </article>
+                </div>
+            </header>
+            <div class="logo-top wow animate__animated animate__fadeInUp animate__delay-2s">
+                <img src="{{ asset ('jho_barber/assets/logo_topsalao.png')}}" alt="Logo do aplicativo Top Salão">
+            </div>
 
-         <article>
-          <img src="{{ asset ('barista/assets/barista3.png') }}" alt="Funcionario">
-          <h5>
-           Christiny Lima
-          </h5>
-          <h4>
-            Trabalhamos com fazendas familiares e microlotes que garantem qualidade e história.
-          </h4>
-         
-        </article>
-
-      </div>
+            <div class="link-app wow animate__animated animate__fadeInUp animate__delay-2s">
+                <a href="https://share.google/IZiwIKeRguvVByaLO" target="_blank">Baixe aqui</a>
+            </div>
 
 
-
-     </section>
+        </section>

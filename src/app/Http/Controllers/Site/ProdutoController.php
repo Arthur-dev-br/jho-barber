@@ -6,9 +6,9 @@ Use App\Http\Controllers\Controller;
 use App\Models\Categoria;
 use App\Models\Produto;
 
-class CardapioController extends Controller
+class ProdutoController extends Controller
 {
-    public function cardapio(?int $idCategoria = null){
+    public function produto(?int $idCategoria = null){
         $listaCategorias = Categoria::where('status_categoria', 'ATIVO')
         ->orderBy('nome_categoria')
         ->get();
@@ -44,6 +44,6 @@ class CardapioController extends Controller
 
         
 
-        return view('site.cardapio.cardapio', compact('listaCategorias', 'listaProdutos', 'produtos', 'categoriaSelecionada'));
+        return view('site.produto.produto', compact('listaCategorias', 'listaProdutos', 'produtos', 'categoriaSelecionada'));
     }
 }
