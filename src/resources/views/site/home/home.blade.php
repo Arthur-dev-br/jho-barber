@@ -31,34 +31,36 @@
 
     <!-- destaque fim -->
 
+    <!-- Galeria inicio -->
+    @include('site.home.galeria')
 
-    <!-- Cardápio inicio -->
-    @include('site.home.cardapio')
-
-    <!-- Cardápio fim -->
-
-
+    <!-- Galeria fim -->
+     
     <!-- Inicio equipe -->
 
     @include('site.home.equipe')
 
 
     <!-- equipe fim -->
-
+    
     <!-- Eventos inicio -->
 
     @include('site.home.evento')
 
     <!-- eventos fim -->
 
-    <!-- Galeria inicio -->
-    @include('site.home.galeria')
+    <!-- Cardápio inicio -->
+    @include('site.home.produto')
 
-    <!-- Galeria fim -->
+    <!-- Cardápio fim -->
+
+
+
+
 
     <!-- Depoimentos inicio -->
 
-    @include('site.home.depoimento')
+    @include('site.home.localizacao')
 
     <!-- Depoimentos Fim -->
 

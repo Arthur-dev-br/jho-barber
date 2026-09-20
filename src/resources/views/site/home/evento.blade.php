@@ -1,279 +1,249 @@
-<section class="eventos">
-      <header class="parallax-padrao">
+<section class="depoimentos">
+    <header class="parallax-padrao">
         <h2>
-          Eventos
+            Depoimentos
         </h2>
         <h3>
-          Experiências que conectam — dentro e fora da xícara
+            Avaliações do nossos serviços!
         </h3>
-      </header>
-      
-      <div class="site cardEventos slideEventos wow animate__animated animate__fadeInUp">
+
+    </header>
+    <div class="site cardDepo">
 
         <article>
-          <img src="{{ asset ('barista/assets/evento_1.png') }}" alt="evento">
-          <h4>
-            Degustação orientada
-          </h4>
-          <h5>
-            Mini Wedding
-          </h5>
 
-          <nav>
-            <h5>Eventos realizados e em destaque</h5>
-         <ul>
-          <li>Workshops de métodos de praparo</li>
-          <li>degustações orientadas</li>
-          <li>Palestras sobre origem e torra</li>
-          <li>Encontros culturais</li>
-          <li>Música ao vivo e saraus</li>
-          <li>Reservas para pequenos eventos e reuniões</li>
-         </ul>
-         </nav>
+            <ul>
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
 
-         <div class="linha-grao">
-          <hr>
-          <img src="{{ asset ('barista/assets/coffee.svg') }}" alt="grão"> </img>
-          <hr>
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
 
-         </div>
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
 
-         <span class="data">20/10/2025</span>
-         
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
 
-       </article>
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+            </ul>
 
-       <article>
-          <img src="{{ asset ('barista/assets/evento_2.png') }}" alt="evento">
-          <h4>
-            Degustação orientada
-          </h4>
-          <h5>
-            Encontro Cultural
-          </h5>
+            <img src="{{ asset('jho_barber/assets/cliente_foto2.png')}}" alt="foto do usuario">
 
-          <nav>
-            <h5>Eventos realizados e em destaque</h5>
-         <ul>
-          <li>Workshops de métodos de praparo</li>
-          <li>degustações orientadas</li>
-          <li>Palestras sobre origem e torra</li>
-          <li>Encontros culturais</li>
-          <li>Música ao vivo e saraus</li>
-          <li>Reservas para pequenos eventos e reuniões</li>
-         </ul>
-         </nav>
+            <p>
+                Excelente profissional com diversas opções de serviço, ambiente agradável e confortável. Super
+                recomendo!!!!!!
+            </p>
 
-         <div class="linha-grao">
-          <hr>
-          <img src="{{ asset ('barista/assets/coffee.svg') }}" alt="grão"> </img>
-          <hr>
+            <h4>
+                Rudy Alessandro
+            </h4>
 
-         </div>
+            <div class="registroDepo">
 
-         <span class="data">15/12/2025</span>
-         
 
-       </article>
+                <h5>
+                    Corte de cabelo, Aparar a barba
+                </h5>
 
-       <article>
-          <img src="{{ asset ('barista/assets/evento_3.png') }}" alt="evento">
-          <h4>
-            Degustação orientada
-          </h4>
-          <h5>
-            Sabores do café Brasileiro
-          </h5>
+            </div>
 
-          <nav>
-            <h5>Eventos realizados e em destaque</h5>
-         <ul>
-          <li>Workshops de métodos de praparo</li>
-          <li>degustações orientadas</li>
-          <li>Palestras sobre origem e torra</li>
-          <li>Encontros culturais</li>
-          <li>Música ao vivo e saraus</li>
-          <li>Reservas para pequenos eventos e reuniões</li>
-         </ul>
-         </nav>
-
-         <div class="linha-grao">
-          <hr>
-          <img src="{{ asset ('barista/assets/coffee.svg') }}" alt="grão"> </img>
-          <hr>
-
-         </div>
-
-         <span class="data">11/01/2026</span>
-         
-
-       </article>
-
-       <article>
-          <img src="{{ asset ('barista/assets/evento_4.png') }}" alt="evento">
-          <h4>
-            Degustação orientada
-          </h4>
-          <h5>
-            Sabores do café Brasileiro
-          </h5>
-
-          <nav>
-            <h5>Eventos realizados e em destaque</h5>
-         <ul>
-          <li>Workshops de métodos de praparo</li>
-          <li>degustações orientadas</li>
-          <li>Palestras sobre origem e torra</li>
-          <li>Encontros culturais</li>
-          <li>Música ao vivo e saraus</li>
-          <li>Reservas para pequenos eventos e reuniões</li>
-         </ul>
-         </nav>
-
-         <div class="linha-grao">
-          <hr>
-          <img src="{{ asset ('barista/assets/coffee.svg') }}" alt="grão"> </img>
-          <hr>
-
-         </div>
-
-         <span class="data">23/03/2026</span>
-         
-
-       </article>
+        </article>
 
         <article>
-          <img src="{{ asset ('barista/assets/evento_1.png') }}" alt="evento">
-          <h4>
-            Degustação orientada
-          </h4>
-          <h5>
-            Sabores do café Brasileiro
-          </h5>
 
-          <nav>
-            <h5>Eventos realizados e em destaque</h5>
-         <ul>
-          <li>Workshops de métodos de praparo</li>
-          <li>degustações orientadas</li>
-          <li>Palestras sobre origem e torra</li>
-          <li>Encontros culturais</li>
-          <li>Música ao vivo e saraus</li>
-          <li>Reservas para pequenos eventos e reuniões</li>
-         </ul>
-         </nav>
+            <ul>
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
 
-         <div class="linha-grao">
-          <hr>
-          <img src="{{ asset ('barista/assets/coffee.svg') }}" alt="grão"> </img>
-          <hr>
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
 
-         </div>
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
 
-         <span class="data">20/10/2025</span>
-         
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
 
-       </article>
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+            </ul>
 
-       <article>
-          <img src="{{ asset ('barista/assets/evento_2.png') }}" alt="evento">
-          <h4>
-            Degustação orientada
-          </h4>
-          <h5>
-            Sabores do café Brasileiro
-          </h5>
+            <img src="{{ asset('jho_barber/assets/cliente_foto3.png')}}" alt="foto do usuario">
 
-          <nav>
-            <h5>Eventos realizados e em destaque</h5>
-         <ul>
-          <li>Workshops de métodos de praparo</li>
-          <li>degustações orientadas</li>
-          <li>Palestras sobre origem e torra</li>
-          <li>Encontros culturais</li>
-          <li>Música ao vivo e saraus</li>
-          <li>Reservas para pequenos eventos e reuniões</li>
-         </ul>
-         </nav>
+            <p>
+                Melhor salão da região, menos de 5 estrelas é inveja!
 
-         <div class="linha-grao">
-          <hr>
-          <img src="{{ asset ('barista/assets/coffee.svg') }}" alt="grão"> </img>
-          <hr>
+            <h4>
+                Wil V
+            </h4>
 
-         </div>
-
-         <span class="data">20/10/2025</span>
-         
-
-       </article>
-
-       <article>
-          <img src="{{ asset ('barista/assets/evento_3.png') }}" alt="evento">
-          <h4>
-            Degustação orientada
-          </h4>
-          <h5>
-            Sabores do café Brasileiro
-          </h5>
-
-          <nav>
-            <h5>Eventos realizados e em destaque</h5>
-         <ul>
-          <li>Workshops de métodos de praparo</li>
-          <li>degustações orientadas</li>
-          <li>Palestras sobre origem e torra</li>
-          <li>Encontros culturais</li>
-          <li>Música ao vivo e saraus</li>
-          <li>Reservas para pequenos eventos e reuniões</li>
-         </ul>
-         </nav>
-
-         <div class="linha-grao">
-          <hr>
-          <img src="{{ asset ('barista/assets/coffee.svg') }}" alt="grão"> </img>
-          <hr>
-
-         </div>
-
-         <span class="data">20/10/2025</span>
-         
-
-       </article>
-
-       <article>
-          <img src="{{ asset ('barista/assets/evento_4.png') }}" alt="evento">
-          <h4>
-            Degustação orientada
-          </h4>
-          <h5>
-            Sabores do café Brasileiro
-          </h5>
-
-          <nav>
-            <h5>Eventos realizados e em destaque</h5>
-         <ul>
-          <li>Workshops de métodos de praparo</li>
-          <li>degustações orientadas</li>
-          <li>Palestras sobre origem e torra</li>
-          <li>Encontros culturais</li>
-          <li>Música ao vivo e saraus</li>
-          <li>Reservas para pequenos eventos e reuniões</li>
-         </ul>
-         </nav>
-
-         <div class="linha-grao">
-          <hr>
-          <img src="{{ asset ('barista/assets/coffee.svg') }}" alt="grão"> </img>
-          <hr>
-
-         </div>
-
-         <span class="data">20/10/2025</span>
-         
-
-       </article>
+            <div class="registroDepo">
 
 
-      </div>
-      </section>
+                <h5>
+                    Corte de cabelo, Aparar a barba, Depilação de sobrancelha
+                </h5>
+
+            </div>
+
+        </article>
+
+        <article>
+
+            <ul>
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+            </ul>
+
+            <img src="{{ asset('jho_barber/assets/cliente_foto4.png')}}" alt="foto do usuario">
+
+            <p>
+                Corto a mais de 2 anos e super recomendo !!
+                Ambiente legal, limpo e organizado.
+                Indico a todos a dar uma passada lá pra cuidar do visual.
+            </p>
+
+            <h4>
+                Elivelton Souza Barbosa
+            </h4>
+
+            <div class="registroDepo">
+
+
+            </div>
+
+        </article>
+
+        <article>
+
+            <ul>
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+            </ul>
+
+            <img src="{{ asset('jho_barber/assets/cliente_foto5.png')}}" alt="foto do usuario">
+
+            <p>
+                Atendimento muito bom e satisfatório
+            </p>
+
+            <h4>
+                Caique Santos
+            </h4>
+
+            <div class="registroDepo">
+
+
+                <h5>
+                    Corte de cabelo, Depilação de sobrancelha
+                </h5>
+
+            </div>
+
+        </article>
+
+        <article>
+
+            <ul>
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+            </ul>
+
+            <img src="{{ asset('jho_barber/assets/cliente_foto1.png')}}" alt="foto do usuario">
+
+            <p>
+                Excelente profissional . O melhor cabeleireiro da região , super indico . Meu filho não troca ele por
+                nenhum outro.
+            </p>
+
+            <h4>
+                Sabrina Almeida
+            </h4>
+
+            <div class="registroDepo">
+
+
+                <h5>
+                    Corte de cabelo
+                </h5>
+
+            </div>
+
+        </article>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+</section>

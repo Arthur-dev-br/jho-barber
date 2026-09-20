@@ -1,56 +1,62 @@
-<section class="destaque">
-      <header class="parallax-padrao">
+<section class="servicos">
+    <header class="parallax-padrao">
         <h2>
-          Destaques
+            Nossos Serviços
         </h2>
         <h3>
-          Nossos destaques da cafeteria
+            confira a variedade de trabalhos oferecidos em nosso local
         </h3>
-      </header>
-      <div class="site card wow animate__animated animate__fadeInUp">
 
-        <!-- Primeiro destaque -->
+    </header>
+    <div class="card-servicos wow animate__animated animate__fadeInUp">
 
         <article>
-          <img src="{{ asset ('barista/assets/close-up-cappuccino-table.png') }}" alt="Casa do Barista - Imagem do serviço em destaque">
-          <h5>
-            Espresso artesanal
-          </h5>
-          <h4>
-            Trabalhamos com fazendas familiares e microlotes que garantem qualidade e história.
-          </h4>
-         
+            <img src="{{ asset ('jho_barber/assets/Corte_cabelo.png')}}" alt="imagem de um homem de cabelo longo cortando o cabelo">
+            <p>
+                Cabelo
+            </p>
         </article>
-  
-        <!-- Segundo Destaque -->
-         
+
         <article>
-
-          <img src="{{ asset ('barista/assets/blend-cocktls-glasses-with-ice-cubes-orange-slices.png') }}" alt="Casa do Barista - Imagem do serviço em destaque">
-          <h5>
-            Coado tradicional
-          </h5>
-          <h4>
-            Desde o espresso perfeito até métodos filtrados como V60, prensa francesa e Aeropress.
-          </h4>
-          
-
+            <img src="{{ asset ('jho_barber/assets/Corte_Barba.png')}}" alt="imagem de um homem de cabelo longo cortando o cabelo">
+            <p>
+                Barba
+            </p>
         </article>
 
-        <!-- Terceiro destaque -->
         <article>
-          <img src="{{ asset ('barista/assets/cafe-gourmet.png') }}" alt="Casa do Barista - Imagem do serviço em destaque">
-          <h5>
-            Prensa francesa
-          </h5>
-          <h4>
-            Encontros, estudos, trabalho, leitura ou simplesmente relaxar.
-          </h4>
-         
-
+            <img src="{{ asset ('jho_barber/assets/Corte_sobrancelha.png')}}" alt="imagem de um homem de cabelo longo cortando o cabelo">
+            <p>
+                Sobrancelha
+            </p>
         </article>
-        
 
-      </div>
-      
-    </section>
+        <article>
+            <img src="{{ asset ('jho_barber/assets/Hidratacao_cabelo.png')}}" alt="imagem de um homem de cabelo longo cortando o cabelo">
+            <p>
+                Hidratação
+            </p>
+        </article>
+
+        <article>
+            <img src="{{ asset ('jho_barber/assets/Cabelo penteado.png')}}" alt="imagem de um homem de cabelo longo cortando o cabelo">
+            <p>
+                Penteados
+            </p>
+        </article>
+
+        <article>
+            <img src="{{ asset ('jho_barber/assets/Cabeo_cuidado.png')}}" alt="imagem de um homem de cabelo longo cortando o cabelo">
+            <p>
+                Progressiva
+            </p>
+        </article>
+
+    </div>
+
+    <div class="mais wow animate__animated animate__fadeInUp">
+        <a href="servicos.php"> Veja Mais</a>
+    </div>
+
+
+</section>

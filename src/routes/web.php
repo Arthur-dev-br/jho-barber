@@ -1,18 +1,18 @@
 <?php
 
-use App\Http\Controllers\Site\CardapioController;
+use App\Http\Controllers\Site\ProdutoController;
 use App\Http\Controllers\Site\ContatoController;
-use App\Http\Controllers\Site\EventosController;
 use App\Http\Controllers\Site\HomeController;
 use App\Http\Controllers\Site\SobreController;
+use App\Http\Controllers\Site\GaleriaController;
 
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BannerController;
-use App\Http\Controllers\Admin\GaleriaController;
 use App\Http\Controllers\Admin\CategoriaController;
 use App\Http\Controllers\Admin\ClienteController;
 use App\Http\Controllers\Admin\DepoimentoController;
+use App\Http\Controllers\Admin\GaleriaController as AdminGaleriaController;
 use App\Http\Controllers\Admin\LinhaTempoController;
 use App\Http\Controllers\Admin\NewsletterController;
 use Illuminate\Support\Facades\Route;
@@ -20,13 +20,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/sobre', [SobreController::class, 'sobre'])->name('sobre');
 
-Route::get('/cardapio', [CardapioController::class, 'cardapio'])->name('cardapio');
-Route::get('/cardapio/categoria/{idCategoria}', [CardapioController::class, 'cardapio'])->name('cardapio.categoria');
+Route::get('/produto', [ProdutoController::class, 'produto'])->name('produto');
+Route::get('/produto/categoria/{idCategoria}', [ProdutoController::class, 'produto'])->name('produto.categoria');
 
-
-
-Route::get('/evento', [EventosController::class, 'evento'])->name('evento');
+Route::get('/galeria', [GaleriaController::class, 'galeria'])->name('galeria');
 Route::get('/contato', [ContatoController::class, 'contato'])->name('contato');
+
+
+
 
 //Estrutura para a área administrativa
 Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
@@ -45,7 +46,7 @@ Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard
     Route::patch('/banner/{id}/status', [BannerController::class, 'status'])->name('admin.banner.status');//Ativar o Desativar Banner
 
     // CRUD GALERIA
-    Route::get('/galeria', [GaleriaController::class, 'index'])->name('admin.galeria.index'); //Lista Galeria
+    Route::get('admin/galeria', [AdminGaleriaController::class, 'index'])->name('admin.galeria.index'); //Lista Galeria
 
     // CRUD DEPOIMENTO
 

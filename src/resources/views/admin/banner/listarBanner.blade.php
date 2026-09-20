@@ -107,7 +107,7 @@
                             </td>
 
                             <td>@if($banner->imagem_banner)
-                              <img src= "{{ asset('barista/assets/' . $banner->imagem_banner) }}"
+                              <img src= "{{ asset('jho_barber/assets/' . $banner->imagem_banner) }}"
                                     alt="{{$banner->titulo_banner }}"
                                     class = "rounded"
                                     style="

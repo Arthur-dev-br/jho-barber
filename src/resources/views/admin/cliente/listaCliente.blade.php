@@ -116,7 +116,7 @@
 
                             <td>
                                 @if($cliente->foto_cliente)
-                              <img src= "{{ asset('barista/assets/' . $cliente->foto_cliente) }}"
+                              <img src= "{{ asset('jho_barber/assets/' . $cliente->foto_cliente) }}"
                                     alt="{{$cliente->foto_cliente }}"
                                     class = "rounded"
                                     style="

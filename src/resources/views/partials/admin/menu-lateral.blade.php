@@ -5,7 +5,7 @@
           <a href="{{route('home')}}" class="brand-link">
             <!--begin::Brand Image-->
             <img
-              src="{{ asset('barista/assets/logo-casa-do-barista.svg')}}"
+              src="{{ asset('jho_barber/assets/logo-casa-do-barista.svg')}}"
               alt="AdminLTE Logo"
               class="brand-image opacity-75 shadow"
             />
