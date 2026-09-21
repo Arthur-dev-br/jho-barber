@@ -23,7 +23,7 @@
              @if (session('sucesso'))
                <div class="alert alert-success" role="alert">
                <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
-                {{ session('sucesso'); }}
+                {{ session('sucesso') }}
                  A simple success alert—check it out!
                </div>
              @endif
@@ -32,7 +32,7 @@
                <!-- ERRO ALERTA -->
                <div class="alert alert-danger" role="alert">
                <i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i>
-                {{ session('erro'); }}
+                {{ session('erro') }}
                 A simple danger alert—check it out!
                </div>
              @endif
@@ -106,7 +106,8 @@
                               {{$banner->id_banner}}
                             </td>
 
-                            <td>@if($banner->imagem_banner)
+                            <td>
+                              @if($banner->imagem_banner)
                               <img src= "{{ asset('jho_barber/assets/' . $banner->imagem_banner) }}"
                                     alt="{{$banner->titulo_banner }}"
                                     class = "rounded"
@@ -114,27 +115,25 @@
                                         width:140px;
                                         height:90px;
                                         object-fit:cover;
-                                    "
-                              >
+                                    ">
                                 @else
                                     <span class="text-muted">
                                         Sem imagem
                                     </span>
-
-                             @endif</td>
+                                @endif
+                            </td>
                             <td>
 
-                             @if($banner->titulo_banner)
+                            @if($banner->titulo_banner)
                               <span>
                                 {{$banner->titulo_banner}}
-                              </span>
-                             
-                                @else
-                                    <span class="text-muted">
-                                        Sem imagem
-                                    </span>
+                              </span> 
+                            @else
+                                <span class="text-muted">
+                                    Sem imagem
+                                </span>
 
-                             @endif
+                            @endif
 
 
 
@@ -171,14 +170,12 @@
                               </div>
                             </td>
                           </tr>
-                          @empty
+                        @empty
                           <tr>
                             
                             <td>Nenhum registro encontrado!</td>
-                           
                             
                           </tr>
-                         
                         @endforelse
                         </tbody>
                       </table>
@@ -190,7 +187,7 @@
                   <div class="card-footer clearfix">
                     <div class="float-start pt-1 fs-7 text-body-secondary">
                       <span>
-                        Pagina 1 de 9 de {{$banner->Count()}} registros
+                        Pagina 1 de 9 de {{$listaBanner->count()}} registros
                       </span>
                     </div>
                     <ul class="pagination pagination-sm m-0 float-end">
@@ -234,7 +231,7 @@
               aria-hidden="true"
             >
               <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content"
 
                 <!-- FORMA DE CADASTRO -->
                   <form

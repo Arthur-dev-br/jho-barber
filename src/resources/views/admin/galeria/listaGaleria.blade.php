@@ -35,7 +35,7 @@
             <div class="card-header">
               <div class="row g-2 align-items-center">
                 <div class="col-12 col-md-4">
-                  <h3 class="card-title">Diretório do usuário</h3>
+                  <h3 class="card-title">Imagens da Galeria</h3>
                 </div>
                 <div class="col-12 col-md-8">
                   <div class="d-flex flex-wrap justify-content-md-end gap-2">
@@ -43,17 +43,17 @@
                       <span class="input-group-text">
                         <i class="bi bi-search" aria-hidden="true"></i>
                       </span>
-                      <input type="search" id="user-search" class="form-control" placeholder="Search users" aria-label="Search users" style="width: 180px">
+                      <input type="search" id="galeria-search" class="form-control" placeholder="Search galerias" aria-label="Search galerias" style="width: 180px">
                     </div>
-                    <select id="user-role-filter" class="form-select form-select-sm w-auto" aria-label="Filter by role">
+                    <select id="galeria-role-filter" class="form-select form-select-sm w-auto" aria-label="Filter by role">
                       <option value="all" selected="">Todos</option>
-                      <option value="Ativos">Ativos</option>
-                      <option value="Inativos">Inativos</option>
+                      <option value="ATIVOS">Ativos</option>
+                      <option value="INATIVOS">Inativos</option>
 
                     </select>
-                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal-add-user">
+                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal-add-galeria">
                       <i class="bi bi-person-plus-fill me-1" aria-hidden="true"> </i>
-                      New user
+                      New galeria
                     </button>
                   </div>
                 </div>
@@ -66,80 +66,74 @@
                 <table class="table table-hover align-middle m-0" role="table">
                   <thead>
                     <tr>
-                      <th scope="col">ID</th>
+                      <th scope="col">Código</th>
                       <th scope="col">Imagem</th>
                       <th scope="col">Titulo</th>
                       <th scope="col">Status</th>
-
-                      <th class="col" scope="col">Data</th>
+                      <th class="col" scope="col">Ações</th>
                     </tr>
                   </thead>
                   <tbody>
                     @forelse($listaGaleria as $galeria)
-                    <tr>
-                      <td>
-                        {{$galeria->id_galeria}}
-                      </td>
-                      <td>
-                        @if($galeria->imagem_galeria)
-                        <img src="{{ asset('jho_barber/assets/' . $galeria->imagem_galeria) }}"
-                          alt="{{ $galeria->nome_galeria }}"
-                          class="rounded"
-                          style="width:140px; height:120px; object-fit:cover;">
-                        @else
-                        <span class="text-muted">Sem imagem</span>
-                        @endif
-                      </td>
+                      <tr>
+                        <td>
+                          {{$galeria->id_galeria}}
+                        </td>
+                        <td>
+                          @if($galeria->imagem_galeria)
+                          <img src="{{ asset('jho_barber/assets/' . $galeria->imagem_galeria) }}"
+                            alt="{{ $galeria->nome_galeria }}"
+                            class="rounded"
+                            style="width:140px; height:120px; object-fit:cover;">
+                          @else
+                            <span class="text-muted">Sem Imagens</span>
+                          @endif
+                        </td>
 
-                      <td>
-                        @if($galeria->nome_galeria)
-                        <span>
-                          {{$galeria->nome_galeria}}
-                        </span>
+                        <td>
+                          @if($galeria->nome_galeria)
+                          <span>
+                            {{$galeria->nome_galeria}}
+                          </span>
 
-                        @else
-                        <span class="text-muted">
-                          Sem imagem
-                        </span>
+                          @else
+                          <span class="text-muted">
+                            Sem imagem
+                          </span>
 
-                        @endif
-                      </td>
-                      <td>
-                        @if ($galeria->status_galeria)
-                        <span class="badge text-bg-success">{{$galeria->status_galeria}}</span>
+                          @endif
+                        </td>
+                        <td>
+                          @if ($galeria->status_galeria)
+                            <span class="badge text-bg-success">{{$galeria->status_galeria}}</span>
 
-                        @else
-                        <span class="badge text-bg-success">INATIVO</span>
-
-
+                          @else
+                            <span class="badge text-bg-success">INATIVO</span>
 
 
-                        @endif
 
-                      </td>
-                      <td>
-                        <span>
-                          {{$galeria->data_criacao_galeria }} / {{$galeria->data_atualizacao_galeria}}
-                        </span>
-                      </td>
-                      <td class="text-end">
-                        <div class="btn-group btn-group-sm">
-                          <button type="button" class="btn btn-outline-secondary" aria-label="Edit Alexander Pierce">
-                            <i class="bi bi-pencil" aria-hidden="true"> </i>
-                          </button>
-                          <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modal-delete-user" aria-label="Delete Alexander Pierce">
-                            <i class="bi bi-trash" aria-hidden="true"> </i>
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
+
+                          @endif
+
+                        </td>
+                        <td class="text-end">
+                          <div class="btn-group btn-group-sm">
+                            <button type="button" class="btn btn-outline-secondary" aria-label="Edit Alexander Pierce">
+                              <i class="bi bi-pencil" aria-hidden="true"> </i>
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modal-delete-galeria" aria-label="Delete Alexander Pierce">
+                              <i class="bi bi-trash" aria-hidden="true"> </i>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
                     @empty
-                    <tr>
+                      <tr>
 
-                      <td>Nenhum registro encontrado!</td>
+                        <td>Nenhuma Imagem encontrada!</td>
 
 
-                    </tr>
+                      </tr>
 
                     @endforelse
                   </tbody>
@@ -185,28 +179,28 @@
       </div>
       <!--end::Row-->
 
-      <!--begin::Add User Modal-->
-      <div class="modal fade" id="modal-add-user" tabindex="-1" aria-labelledby="modal-add-user-label" aria-hidden="true">
+      <!--begin::Add galeria Modal-->
+      <div class="modal fade" id="modal-add-galeria" tabindex="-1" aria-labelledby="modal-add-galeria-label" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <form>
               <div class="modal-header">
-                <h5 class="modal-title" id="modal-add-user-label">Add new user</h5>
+                <h5 class="modal-title" id="modal-add-galeria-label">Add new galeria</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <div class="mb-3">
-                  <label for="new-user-name" class="form-label"> Full name <span class="required-indicator sr-only"> (required)</span></label>
-                  <input type="text" class="form-control" id="new-user-name" placeholder="e.g. Jane Doe" required="">
+                  <label for="new-galeria-name" class="form-label"> Full name <span class="required-indicator sr-only"> (required)</span></label>
+                  <input type="text" class="form-control" id="new-galeria-name" placeholder="e.g. Jane Doe" required="">
                 </div>
                 <div class="mb-3">
-                  <label for="new-user-email" class="form-label"> Email address <span class="required-indicator sr-only"> (required)</span></label>
-                  <input type="email" class="form-control" id="new-user-email" placeholder="name@example.com" required="">
+                  <label for="new-galeria-email" class="form-label"> Email address <span class="required-indicator sr-only"> (required)</span></label>
+                  <input type="email" class="form-control" id="new-galeria-email" placeholder="name@example.com" required="">
                   <div class="form-text">The invitation will be sent to this address.</div>
                 </div>
                 <div class="mb-3">
-                  <label for="new-user-role" class="form-label"> Role </label>
-                  <select id="new-user-role" class="form-select">
+                  <label for="new-galeria-role" class="form-label"> Role </label>
+                  <select id="new-galeria-role" class="form-select">
                     <option selected="">Subscriber</option>
                     <option>Author</option>
                     <option>Editor</option>
@@ -214,8 +208,8 @@
                   </select>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="new-user-welcome" checked="">
-                  <label class="form-check-label" for="new-user-welcome">
+                  <input class="form-check-input" type="checkbox" id="new-galeria-welcome" checked="">
+                  <label class="form-check-label" for="new-galeria-welcome">
                     Send a welcome email with login details
                   </label>
                 </div>
@@ -224,25 +218,25 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                   Cancel
                 </button>
-                <button type="submit" class="btn btn-primary">Create user</button>
+                <button type="submit" class="btn btn-primary">Create galeria</button>
               </div>
             </form>
           </div>
         </div>
       </div>
-      <!--end::Add User Modal-->
+      <!--end::Add galeria Modal-->
 
-      <!--begin::Delete User Modal-->
-      <div class="modal fade" id="modal-delete-user" tabindex="-1" aria-labelledby="modal-delete-user-label" aria-hidden="true">
+      <!--begin::Delete galeria Modal-->
+      <div class="modal fade" id="modal-delete-galeria" tabindex="-1" aria-labelledby="modal-delete-galeria-label" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="modal-delete-user-label">Delete user</h5>
+              <h5 class="modal-title" id="modal-delete-galeria-label">Delete galeria</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <p class="mb-0">
-                Are you sure you want to delete this user? All content owned by the account
+                Are you sure you want to delete this galeria? All content owned by the account
                 will be reassigned to the site administrator. This action cannot be undone.
               </p>
             </div>
@@ -251,13 +245,13 @@
                 Cancel
               </button>
               <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                Delete user
+                Delete galeria
               </button>
             </div>
           </div>
         </div>
       </div>
-      <!--end::Delete User Modal-->
+      <!--end::Delete galeria Modal-->
     </div>
     <!--end::Container-->
   </div>
