@@ -90,19 +90,18 @@
                              <td>
                                  {{$news->aceite_news}}
                             </td>                                                   
+                            {{--Aceite--}}
                             <td>
-                               @if ($news->status_news)
-                              <span class="badge text-bg-success">{{$news->status_news}}</span>
-
-                                @else
-                                <span class="badge text-bg-success">INATIVO</span>
-
-
-
-
+                                @if( $news->aceite_news == 1)
+                              <span class="badge text-bg-success">
+                                1
+                              </span>
+                              @else
+                              <span class="badge text-bg-warning">
+                                0
+                              </span>
                               @endif
-
-                            </td>                           
+                            </td>                    
                             <td class="text-end">
                               <div class="btn-group btn-group-sm">
                                 <button type="button" class="btn btn-outline-secondary" aria-label="Edit Alexander Pierce">

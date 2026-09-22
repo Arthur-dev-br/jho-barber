@@ -94,17 +94,19 @@
 
                              @endif
                             </td>
+
+                           {{--Status--}}
                             <td>
-                               @if ($categoria->status_categoria)
-                              <span class="badge text-bg-success">{{$categoria->status_categoria}}</span>
-
-                                @else
-                                <span class="badge text-bg-success">INATIVO</span>
-
-
-
-
+                                @if( $categoria->status_categoria === 'ATIVO')
+                              <span class="badge text-bg-success">
+                                Ativo
+                              </span>
+                              @else
+                              <span class="badge text-bg-warning">
+                                Inativo
+                              </span>
                               @endif
+                            </td>
 
                             </td>
                             <td class="text-end">
@@ -136,7 +138,7 @@
                   <!--begin::Card Footer-->
                   <div class="card-footer clearfix">
                     <div class="float-start pt-1 fs-7 text-body-secondary">
-                      Pagina 1 de 9 de {{$categoria->count()}} registros
+                      Pagina 1 de 9 de {{$listaCategoria->count()}} registros
                     </div>
                     <ul class="pagination pagination-sm m-0 float-end">
                       <li class="page-item disabled">
