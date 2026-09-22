@@ -104,19 +104,18 @@
 
                         @endif
                       </td>
-                      <td>
-                        @if ($galeria->status_galeria)
-                        <span class="badge text-bg-success">{{$galeria->status_galeria}}</span>
-
-                        @else
-                        <span class="badge text-bg-success">INATIVO</span>
-
-
-
-
-                        @endif
-
-                      </td>
+                      {{--Status--}}
+                            <td>
+                                @if( $galeria->status_galeria === 'ATIVO')
+                              <span class="badge text-bg-success">
+                                Ativo
+                              </span>
+                              @else
+                              <span class="badge text-bg-warning">
+                                Inativo
+                              </span>
+                              @endif
+                            </td>
                       <td>
                         <span>
                           {{$galeria->data_criacao_galeria }} / {{$galeria->data_atualizacao_galeria}}

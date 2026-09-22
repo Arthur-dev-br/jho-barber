@@ -74,64 +74,83 @@
                             <th scope="col">Status</th>                                                       
                           </tr>
                         </thead>
-                        <tbody>
-                        @forelse($listaDepoimento as $depoimento)
+                   <tbody>
+                            @forelse($listaDepoimento as $depoimento)
                           <tr>
+                            {{--ID--}}
+                            <td>
+                              {{$depoimento->id_depoimento}}
+                            </td>
+                            {{--ID Cliente--}}
+                            <td>
+                              {{$depoimento->id_cliente}}
+                            </td>
                             
-                            <td>
-                                <span>
-                                    {{$depoimento->id_depoimento}}                                    
-                                </span>                              
                             </td>
-
+                            {{--Título--}}
                             <td>
-                                <span>
-                                  {{$depoimento->id_cliente}}   
-                                </span>                           
-                             </td>
-                              
-                            </td>
-                            <td> 
-                             <span>
-                              {{$depoimento->titulo_depoimento}}
+                              <span class="badge text-bg-success"> 
+                                {{ $depoimento->titulo_depoimento }}
                              </span>
                             </td>
+                            {{--Descrição--}}
                             <td>
-                                <span>
-                                {{$depoimento->descricao_depoimento}}
-                                </span>                            
+                              <span class="badge text-bg-success"> 
+                                {{ $depoimento->descricao_depoimento }}
+                             </span>
                             </td>
-                            <td>
-                              <span>
-                               {{$depoimento->nota_depoimento}}
-                              </span>
+                            {{--Nota--}}
+                             <td>
+                              <span class="badge text-bg-success"> 
+                                {{ $depoimento->nota_depoimento }}
+                             </span>
                             </td>
 
-                             <td>
-                              <span>
-                               {{$depoimento->status_depoimento}}
+                            {{--Status--}}
+                            <td>
+                                @if( $depoimento->status_depoimento === 'APROVADO')
+                              <span class="badge text-bg-success">
+                                Aprovado
                               </span>
+                              @else
+                              <span class="badge text-bg-warning">
+                                Pendente
+                              </span>
+                              @endif
                             </td>
+                            
+                            {{--Ações--}}
                             <td class="text-end">
                               <div class="btn-group btn-group-sm">
-                                <button type="button" class="btn btn-outline-secondary" aria-label="Edit Alexander Pierce">
+                                <button
+                                 type="button" 
+                                 class="btn btn-outline-secondary"
+                                 aria-label="Editar"
+                                 >
                                   <i class="bi bi-pencil" aria-hidden="true"> </i>
                                 </button>
-                                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modal-delete-user" aria-label="Delete Alexander Pierce">
+                                <button 
+                                type="button" 
+                                class="btn btn-outline-danger" 
+                                data-bs-toggle="modal"
+                                 data-bs-target="#modal-delete-depoimento" 
+                                 aria-label="Deletar"
+                                 >
                                   <i class="bi bi-trash" aria-hidden="true"> </i>
                                 </button>
                               </div>
                             </td>
                           </tr>
-                        @empty
+                          @empty
                           <tr>
-                            
-                            <td>Nenhum registro encontrado!</td>
-                           
-                            
+                            <td
+                               colspan="5"
+                               class="text-center py-4 text-muted"
+                               >
+                                 Nenhum depoimento cadastrado.
+                            </td>
                           </tr>
-                         
-                        @endforelse
+                          @endforelse
                         </tbody>
                       </table>
                     </div>
@@ -141,7 +160,7 @@
                   <!--begin::Card Footer-->
                   <div class="card-footer clearfix">
                     <div class="float-start pt-1 fs-7 text-body-secondary">
-                      Pagina 1 de 9 de {{$depoimento->count()}} registros
+                      Pagina 1 de 9 de {{$listaDepoimento->count()}} registros
                     </div>
                     <ul class="pagination pagination-sm m-0 float-end">
                       <li class="page-item disabled">
@@ -181,21 +200,21 @@
                 <div class="modal-content">
                   <form>
                     <div class="modal-header">
-                      <h5 class="modal-title" id="modal-add-user-label">Add new user</h5>
+                      <h5 class="modal-title" id="modal-add-user-label">Novo depoimento</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                       <div class="mb-3">
-                        <label for="new-user-name" class="form-label"> Full name <span class="required-indicator sr-only"> (required)</span></label>
-                        <input type="text" class="form-control" id="new-user-name" placeholder="e.g. Jane Doe" required="">
+                        <label for="new-user-name" class="form-label"> Nome  <span class="required-indicator sr-only"> (required)</span></label>
+                        <input type="text" class="form-control" id="new-user-name" placeholder="Nome" required="">
                       </div>
                       <div class="mb-3">
-                        <label for="new-user-email" class="form-label"> Email address <span class="required-indicator sr-only"> (required)</span></label>
-                        <input type="email" class="form-control" id="new-user-email" placeholder="name@example.com" required="">
-                        <div class="form-text">The invitation will be sent to this address.</div>
+                        <label for="new-user-email" class="form-label"> Depoimento <span class="required-indicator sr-only"> (required)</span></label>
+                        <input type="email" class="form-control" id="new-user-email" placeholder="Depoimento" required="">
+                        <div class="form-text">Faça o seu depoimento</div>
                       </div>
                       <div class="mb-3">
-                        <label for="new-user-role" class="form-label"> Role </label>
+                        <label for="new-user-role" class="form-label"> Nota </label>
                         <select id="new-user-role" class="form-select">
                           <option selected="">Subscriber</option>
                           <option>Author</option>

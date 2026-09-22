@@ -133,18 +133,17 @@
                              @endif
                             </td>
 
+                            {{--Status--}}
                             <td>
-                               @if ($cliente->status_cliente)
-                              <span class="badge text-bg-success">{{$cliente->status_cliente}}</span>
-
-                                @else
-                                <span class="badge text-bg-success">INATIVO</span>
-
-
-
-
+                                @if( $cliente->status_cliente === 'ATIVO')
+                              <span class="badge text-bg-success">
+                                Ativo
+                              </span>
+                              @else
+                              <span class="badge text-bg-warning">
+                                Inativo
+                              </span>
                               @endif
-
                             </td>
                             
                             <td class="text-end">
@@ -221,35 +220,33 @@
                     </div>
                     <div class="modal-body">
                       <div class="mb-3">
-                        <label for="new-user-name" class="form-label"> Full name <span class="required-indicator sr-only"> (required)</span></label>
-                        <input type="text" class="form-control" id="new-user-name" placeholder="e.g. Jane Doe" required="">
+                        <label for="new-user-name" class="form-label"> Nome Completo <span class="required-indicator sr-only"> (required)</span></label>
+                        <input type="text" class="form-control" id="new-user-name" placeholder=" Nome Completo" required="">
                       </div>
                       <div class="mb-3">
-                        <label for="new-user-email" class="form-label"> Email address <span class="required-indicator sr-only"> (required)</span></label>
-                        <input type="email" class="form-control" id="new-user-email" placeholder="name@example.com" required="">
-                        <div class="form-text">The invitation will be sent to this address.</div>
+                        <label for="new-user-email" class="form-label"> Email <span class="required-indicator sr-only"> (required)</span></label>
+                        <input type="email" class="form-control" id="new-user-email" placeholder="Email" required="">
                       </div>
+
                       <div class="mb-3">
-                        <label for="new-user-role" class="form-label"> Role </label>
+                        <label for="new-user-role" class="form-label"> Status </label>
                         <select id="new-user-role" class="form-select">
-                          <option selected="">Subscriber</option>
-                          <option>Author</option>
-                          <option>Editor</option>
-                          <option>Administrator</option>
+                          <option selected="">Ativo</option>
+                          <option>Inativo</option>
                         </select>
                       </div>
-                      <div class="form-check">
+                      <!--<div class="form-check">
                         <input class="form-check-input" type="checkbox" id="new-user-welcome" checked="">
                         <label class="form-check-label" for="new-user-welcome">
                           Send a welcome email with login details
                         </label>
-                      </div>
+                      </div>-->
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        Cancel
+                        Cancelar
                       </button>
-                      <button type="submit" class="btn btn-primary">Create user</button>
+                      <button type="submit" clas s="btn btn-primary">Confirmar</button>
                     </div>
                   </form>
                 </div>
@@ -262,21 +259,20 @@
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="modal-delete-user-label">Delete user</h5>
+                    <h5 class="modal-title" id="modal-delete-user-label">Deixar inativo</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
                     <p class="mb-0">
-                      Are you sure you want to delete this user? All content owned by the account
-                      will be reassigned to the site administrator. This action cannot be undone.
+                      Tem certeza que deseja deixar inativo esse cliente?
                     </p>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                      Cancel
+                      Cancelar
                     </button>
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                      Delete user
+                      Deixar inativo
                     </button>
                   </div>
                 </div>

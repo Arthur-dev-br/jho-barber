@@ -1,34 +1,32 @@
+/* FONTES GOOGLE */
+
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-@font-face {
-    font-family: "Geometry Soft Pro-Bold N";
-    src: url(../fonts/Geometry\ Soft\ Pro-Bold\ N.otf) format("opentype");
-    font-weight: 700;
-    font-style: normal;
-}
 
-
+/*VARIAVÉIS JHO */
 :root {
 
     /* Cores */
-    --cor-fundo-1: #f3e8dc;
-    --cor-fundo-2: #2e2e2e;
-    --cor-primaria: #4a2c19;
-    --cor-secundaria-1: #8b5e3c;
-    --cor-secundaria-2: #5c6945;
-    --cor-destaque: #fca311;
+    --cor-primaria-1: #000000;
+    --cor-primaria-2: #fca311;
+    --cor-secundaria-1: #8b5e3a;
+    --cor-secundaria-2: #562f00;
+    --cor-terciaria: #e5e5e5;
+    --cor-caixas: #494949;
 
-    --cor-texto: #2e2e2e;
-    --cor-titulo: #000000;
-    --cor-subtitulo: #8b5e3c;
 
+    --cor-texto: #000000;
+    --cor-titulo: #14213d;
+    --cor-subtitulo: #000000;
 
     /* Fontes */
 
-    --fonte-texto: "Bebas Neue";
-    --fonte-titulo: "Geometry Soft Pro-Bold N";
+    --fonte-titulo: "Bebas Neue";
+    --fonte-texto: "Inknut Antiqua";
 }
+
 
 h1{
     font-family: var(--fonte-titulo) !important;
@@ -51,9 +49,15 @@ h3 {
 
 p {
     font-family: var(--fonte-texto);
-    color: var(--cor-destaque);
+    color: var(--cor-primaria-2);
     font-size: 15px;
 }
+
+a{
+    font-family: var(--fonte-texto) !important; 
+    color: var(--cor-secundaria-2);
+}
+
 
 .sidebar-menu .nav-header{
     font-family: var(--fonte-texto);
@@ -75,6 +79,44 @@ p {
 
 
 
+
+/* cor das caixas */
+.text-bg-primary {
+  background-color: var(--cor-primaria-1) !important;
+
+  }
+
+.text-bg-success {
+
+  background-color: var(--cor-caixas) !important;
+}
+
+.text-bg-warning{
+    background-color: var(--cor-caixas) !important;
+}
+
+.text-bg-danger{
+    background-color: var( --cor-caixas) !important;
+}
+
+/* fim cor das caixas */
+
+/* cor icons card */
+.small-box .small-box-icon {
+  font-size: 70px;
+  color: rgba(0, 0, 0, 0.50);
+} 
+
+/* cor footer */
+.app-footer{
+    
+    font-family: var(--fonte-texto);
+    color: var(--cor-primaria-2);
+}
+
+.float-end d-none d-sm-inline{
+    color: var(--cor-primaria-2);
+}
 
 
 

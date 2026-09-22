@@ -103,7 +103,7 @@
                               <span class="badge text-bg-success">{{$linhatempo->status_linha_tempo}}</span>
 
                                 @else
-                                <span class="badge text-bg-success">INATIVO</span>
+                                <span class="badge text-bg-danger">INATIVO</span>
 
 
 

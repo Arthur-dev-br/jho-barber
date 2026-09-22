@@ -140,20 +140,19 @@
 
 
                             </td>
+                             {{--Status--}}
                             <td>
-                              @if ($banner->status_banner)
-                              <span class="badge text-bg-success">{{$banner->status_banner}}</span>
-
-                                @else
-                                <span class="badge text-bg-success">INATIVO</span>
-
-
-
-
+                                @if( $banner->status_banner === 'ATIVO')
+                              <span class="badge text-bg-success">
+                                Ativo
+                              </span>
+                              @else
+                              <span class="badge text-bg-warning">
+                                Inativo
+                              </span>
                               @endif
-
-                              
                             </td>
+                            
                             <td>
                               <span>
                                 {{$banner->data_criacao_banner }} / {{$banner->data_atualizacao_banner}}
