@@ -140,7 +140,7 @@
                   <!--begin::Card Footer-->
                   <div class="card-footer clearfix">
                     <div class="float-start pt-1 fs-7 text-body-secondary">
-                      Pagina 1 de 9 de {{$linhatempo->count()}} registros
+                      Pagina 1 de 9 de {{$listaLinhatempo->count()}} registros
                     </div>
                     <ul class="pagination pagination-sm m-0 float-end">
                       <li class="page-item disabled">

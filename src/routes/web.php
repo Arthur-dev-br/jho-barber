@@ -64,3 +64,6 @@ Route::get('/admin/cliente',[ClienteController::class, 'index'])->name('admin.cl
 Route::get('/admin/depoimento',[DepoimentoController::class, 'index'])->name('admin.depoimento.index');
 Route::get('/admin/linhatempo',[LinhaTempoController::class, 'index'])->name('admin.linhatempo.index');
 Route::get('/admin/newsletter',[NewsletterController::class, 'index'])->name('admin.newsletter.index');
+
+
+
