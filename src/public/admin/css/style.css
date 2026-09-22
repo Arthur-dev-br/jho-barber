@@ -17,10 +17,10 @@
     --cor-primaria: #4a2c19;
     --cor-secundaria-1: #8b5e3c;
     --cor-secundaria-2: #5c6945;
-    --cor-destaque: #b56a34;
+    --cor-destaque: #fca311;
 
     --cor-texto: #2e2e2e;
-    --cor-titulo: #4a2c19;
+    --cor-titulo: #000000;
     --cor-subtitulo: #8b5e3c;
 
 
@@ -33,6 +33,7 @@
 h1{
     font-family: var(--fonte-titulo) !important;
     font-weight: 400;
+    color: var(--cor-titulo);
 }
 
 h2 {

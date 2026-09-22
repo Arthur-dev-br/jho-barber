@@ -43,7 +43,7 @@
                             <span class="input-group-text">
                               <i class="bi bi-search" aria-hidden="true"></i>
                             </span>
-                            <input type="search" id="user-search" class="form-control" placeholder="Search users" aria-label="Search users" style="width: 180px">
+                            <input type="search" id="user-search" class="form-control" placeholder="Pesquisar cliente" aria-label="Pesquisar cliente" style="width: 180px">
                           </div>
                           <select id="user-role-filter" class="form-select form-select-sm w-auto" aria-label="Filter by role">
                             <option value="all" selected="">Todos</option>
@@ -53,7 +53,7 @@
                           </select>
                           <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal-add-user">
                             <i class="bi bi-person-plus-fill me-1" aria-hidden="true"> </i>
-                            New user
+                            Novo cliente
                           </button>
                         </div>
                       </div>
@@ -116,7 +116,7 @@
 
                             <td>
                                 @if($cliente->foto_cliente)
-                              <img src= "{{ asset('jho_barber/assets/' . $cliente->foto_cliente) }}"
+                              <img src= "{{ asset('jho_barber/assets/cliente/' . $cliente->foto_cliente) }}"
                                     alt="{{$cliente->foto_cliente }}"
                                     class = "rounded"
                                     style="
@@ -176,7 +176,7 @@
                   <!--begin::Card Footer-->
                   <div class="card-footer clearfix">
                     <div class="float-start pt-1 fs-7 text-body-secondary">
-                      Pagina 1 de 9 de {{$cliente->count()}} registros
+                      Pagina 1 de 9 de {{$listaCliente->count()}} registros
                     </div>
                     <ul class="pagination pagination-sm m-0 float-end">
                       <li class="page-item disabled">
@@ -216,7 +216,7 @@
                 <div class="modal-content">
                   <form>
                     <div class="modal-header">
-                      <h5 class="modal-title" id="modal-add-user-label">Add new user</h5>
+                      <h5 class="modal-title" id="modal-add-user-label">Novo cliente</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">

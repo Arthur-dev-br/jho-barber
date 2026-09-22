@@ -4,7 +4,7 @@
         <!--end::To the end-->
         <!--begin::Copyright-->
         <strong>
-          Copyright &copy; 2014-2026&nbsp;
+          Criado e desenvolvido por TECH TRIO STUDIO - ©2026
           <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
         </strong>
         All rights reserved.

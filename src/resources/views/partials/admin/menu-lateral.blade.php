@@ -5,8 +5,8 @@
           <a href="{{route('home')}}" class="brand-link">
             <!--begin::Brand Image-->
             <img
-              src="{{ asset('jho_barber/assets/logo-casa-do-barista.svg')}}"
-              alt="AdminLTE Logo"
+              src="{{ asset('jho_barber/assets/logo_real_jho.png')}}"
+              alt="Jho Barbershop Logo"
               class="brand-image opacity-75 shadow"
             />
             <!--end::Brand Image-->
