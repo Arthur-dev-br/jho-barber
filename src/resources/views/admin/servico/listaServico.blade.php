@@ -6,13 +6,13 @@
             <!--begin::Row-->
             <div class="row">
               <div class="col-sm-6">
-                <h1 class="mb-0 fs-3">Linha do tempo</h1>
+                <h1 class="mb-0 fs-3">Serviços</h1>
               </div>
               <div class="col-sm-6">
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb float-sm-end">
                     <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Linha do tempo</li>
+                    <li class="breadcrumb-item active" aria-current="page">Serviços</li>
                   </ol>
                 </nav>
               </div>
@@ -35,7 +35,7 @@
                   <div class="card-header">
                     <div class="row g-2 align-items-center">
                       <div class="col-12 col-md-4">
-                        <h3 class="card-title">Diretório do usuário</h3>
+                       
                       </div>
                       <div class="col-12 col-md-8">
                         <div class="d-flex flex-wrap justify-content-md-end gap-2">
@@ -53,7 +53,7 @@
                           </select>
                           <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal-add-user">
                             <i class="bi bi-person-plus-fill me-1" aria-hidden="true"> </i>
-                            New user
+                            Novo Serviço
                           </button>
                         </div>
                       </div>
@@ -67,41 +67,84 @@
                         <thead>
                           <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Aceito</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Imagem</th>
                             <th scope="col">Status</th>
-                            
                           </tr>
                         </thead>
                         <tbody>
-                        @forelse($listaNews as $news)
+                        @forelse($listaServico as $categoria)
                           <tr>
-                            
+
+                            {{--ID--}}
                             <td>
-                              {{$news->id_news}}
+                              {{$servico->id_servico}}
+                            </td>
+                            
+                            {{--Nome--}}
+                            <td>
+                              @if($servico->nome_servico)
+                              <span>
+                                {{$servico->nome_servico}}
+                              </span>
+                             
+                                @else
+                                    <span class="text-muted">
+                                        Sem serviço
+                                    </span>
+
+                             @endif
                             </td>
 
+                            {{--Descrição--}}
                             <td>
-                                 {{$news->email_news}}
+                              <span  class="badge text-bg-success">
+                                {{ $servico->descricao_servico}}
+                              </span>
                             </td>
-                              
+
+                             {{--Valor--}}
+                              <td>
+                              <span  class="badge text-bg-success">
+                                {{ $servico->valor_servico}}
+                              </span>
                             </td>
-                            
-                             <td>
-                                 {{$news->aceite_news}}
-                            </td>                                                   
-                            {{--Aceite--}}
+
+                            {{--Imagem--}}
                             <td>
-                                @if( $news->aceite_news == 1)
+                             @if($servico->imagem_servico)
+                             <img 
+                                src="{{ asset('jho_barber/assets/' . $servico->imagem_servico) }}" 
+                                alt="{{ $servico->nome_servico }}"
+                                class="rounded"
+                                style="
+                                  width: 100px;
+                                  height: 60px;
+                                  object-fit: cover;
+                                "
+                                >
+                             @else
+                                <span class="text-muted">
+                                    Sem imagem
+                                </span>
+                             @endif
+
+                           {{--Status--}}
+                            <td>
+                                @if( $servico->status_servico === 'ATIVO')
                               <span class="badge text-bg-success">
-                                1
+                                Ativo
                               </span>
                               @else
                               <span class="badge text-bg-warning">
-                                0
+                                Inativo
                               </span>
                               @endif
-                            </td>                    
+                            </td>
+
+                            </td>
                             <td class="text-end">
                               <div class="btn-group btn-group-sm">
                                 <button type="button" class="btn btn-outline-secondary" aria-label="Edit Alexander Pierce">
@@ -131,7 +174,7 @@
                   <!--begin::Card Footer-->
                   <div class="card-footer clearfix">
                     <div class="float-start pt-1 fs-7 text-body-secondary">
-                      Total de newsletters: {{$news->count()}} 
+                     Total de serviços: {{$listaServico->count()}}
                     </div>
                     
                   </div>
@@ -149,18 +192,18 @@
                 <div class="modal-content">
                   <form>
                     <div class="modal-header">
-                      <h5 class="modal-title" id="modal-add-user-label">Add new user</h5>
+                      <h5 class="modal-title" id="modal-add-user-label">Novo Serviço</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                       <div class="mb-3">
-                        <label for="new-user-name" class="form-label"> Full name <span class="required-indicator sr-only"> (required)</span></label>
+                        <label for="new-user-name" class="form-label"> Nome do serviço <span class="required-indicator sr-only"> (required)</span></label>
                         <input type="text" class="form-control" id="new-user-name" placeholder="e.g. Jane Doe" required="">
                       </div>
                       <div class="mb-3">
-                        <label for="new-user-email" class="form-label"> Email address <span class="required-indicator sr-only"> (required)</span></label>
+                        <label for="new-user-email" class="form-label"> Descrição <span class="required-indicator sr-only"> (required)</span></label>
                         <input type="email" class="form-control" id="new-user-email" placeholder="name@example.com" required="">
-                        <div class="form-text">The invitation will be sent to this address.</div>
+                        <div class="form-text">Faça uma descrição para o serviço</div>
                       </div>
                       <div class="mb-3">
                         <label for="new-user-role" class="form-label"> Role </label>

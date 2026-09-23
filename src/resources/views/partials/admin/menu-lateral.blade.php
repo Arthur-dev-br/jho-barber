@@ -56,13 +56,6 @@
             <!-- VENDAS -->
 
               <li class="nav-header">VENDAS</li>
-              
-              <li class="nav-item">
-                <a href="./users.html" class="nav-link">
-                  <i class="nav-icon bi bi-people"></i>
-                  <p>Users</p>
-                </a>
-              </li>
 
               <li class="nav-item">
                 <a href="{{route('admin.cliente.index')}}" class="nav-link">
@@ -72,12 +65,11 @@
               </li>
 
               <li class="nav-item">
-                <a href="./users.html" class="nav-link">
-                  <i class="nav-icon bi bi-people"></i>
-                  <p>Users</p>
-                </a>
-              </li>
-
+                  <a href="{{ route('admin.usuario.index') }}" class="nav-link">
+                    <i class="nav-icon bi bi-circle-fill"></i>
+                    <p class="text">Usuários</p>
+                  </a>
+                </li>
               <!-- SITE -->
 
               <li class="nav-header">SITE</li>
@@ -112,6 +104,13 @@
                 <a href="{{route('admin.newsletter.index')}}" class="nav-link">
                   <i class="nav-icon bi bi-circle-fill"></i>
                   <p>Newsletter</p>
+                </a>
+              </li>
+
+               <li class="nav-item">
+                <a href="{{route('admin.servico.index')}}" class="nav-link">
+                  <i class="nav-icon bi bi-circle-fill"></i>
+                  <p>Serviços</p>
                 </a>
               </li>
 
