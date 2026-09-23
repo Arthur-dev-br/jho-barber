@@ -58,6 +58,9 @@ a{
     color: var(--cor-secundaria-2);
 }
 
+.app-main{
+    background-color: var(--cor-terciaria);
+}
 
 .sidebar-menu .nav-header{
     font-family: var(--fonte-texto);
@@ -75,6 +78,10 @@ a{
 .sidebar-brand .brand-link .brand-image {
   width: 150px;
   max-height: none;
+}
+
+.sidebar-overlay{
+    background-color: var(--cor-terciaria);
 }
 
 

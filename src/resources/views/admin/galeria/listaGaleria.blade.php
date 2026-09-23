@@ -11,7 +11,7 @@
         <div class="col-sm-6">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb float-sm-end">
-              <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+              <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
               <li class="breadcrumb-item active" aria-current="page">Galeria</li>
             </ol>
           </nav>
@@ -26,237 +26,95 @@
   <div class="app-content">
     <!--begin::Container-->
     <div class="container-fluid">
-      <!--begin::Row-->
-      <div class="row">
-        <div class="col-12">
-          <!--begin::Card-->
-          <div class="card mb-4">
-            <!--begin::Card Header-->
-            <div class="card-header">
-              <div class="row g-2 align-items-center">
-                <div class="col-12 col-md-4">
-                  <h3 class="card-title">Diretório do usuário</h3>
-                </div>
-                <div class="col-12 col-md-8">
-                  <div class="d-flex flex-wrap justify-content-md-end gap-2">
-                    <div class="input-group input-group-sm w-auto">
-                      <span class="input-group-text">
-                        <i class="bi bi-search" aria-hidden="true"></i>
-                      </span>
-                      <input type="search" id="user-search" class="form-control" placeholder="Search users" aria-label="Search users" style="width: 180px">
-                    </div>
-                    <select id="user-role-filter" class="form-select form-select-sm w-auto" aria-label="Filter by role">
-                      <option value="all" selected="">Todos</option>
-                      <option value="Ativos">Ativos</option>
-                      <option value="Inativos">Inativos</option>
-
-                    </select>
-                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal-add-user">
-                      <i class="bi bi-person-plus-fill me-1" aria-hidden="true"> </i>
-                      New user
-                    </button>
+      <!--begin::Card-->
+      <div class="card">
+        <!--begin::Card Header-->
+        <div class="card-header d-flex flex-wrap align-items-center gap-2">
+          <div class="card-title">Nossa galeria</div>
+          <div class="card-tools">            
+            <div class="btn-group btn-group-sm" role="group" aria-label="Filter by category" id="gallery-filters">
+              <button type="button" class="btn btn-primary" data-gallery-filter="all" aria-pressed="true">
+                TODAS
+              </button>
+              @foreach($statusGaleria as $status)
+              <button type="button" class="btn btn-outline-primary btn-categoria" data-gallery-filter="places" aria-pressed="false">
+                {{$status->status_galeria}}
+              </button>
+              @endforeach
+            </div>
+          </div>
+        </div>
+        <!--end::Card Header-->
+        <!--begin::Card Body-->
+        <div class="card-body">
+          <!--begin::Gallery Grid-->
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xxl-4 g-3" id="gallery-grid">
+            @forelse($listaGaleria as $galeria)
+              <div class="col" data-gallery-item="places">
+                <figure class="card h-100 mb-0">
+                  <div class="ratio ratio-4x3">
+                    <img src="{{ asset('jho_barber/assets/' . $galeria->imagem_galeria) }}" alt="Old town at dusk" class="card-img-top object-fit-cover" loading="lazy">
                   </div>
-                </div>
-              </div>
-            </div>
-            <!--end::Card Header-->
-            <!--begin::Card Body-->
-            <div class="card-body p-0">
-              <div class="table-responsive">
-                <table class="table table-hover align-middle m-0" role="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">ID</th>
-                      <th scope="col">Imagem</th>
-                      <th scope="col">Titulo</th>
-                      <th scope="col">Status</th>
-
-                      <th class="col" scope="col">Data</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    @forelse($listaGaleria as $galeria)
-                    <tr>
-                      <td>
-                        {{$galeria->id_galeria}}
-                      </td>
-                      <td>
-                        @if($galeria->imagem_galeria)
-                        <img src="{{ asset('jho_barber/assets/' . $galeria->imagem_galeria) }}"
-                          alt="{{ $galeria->nome_galeria }}"
-                          class="rounded"
-                          style="width:140px; height:120px; object-fit:cover;">
+                  <figcaption class="card-body d-flex align-items-start gap-2 py-2">
+                    <div class="flex-grow-1 overflow-hidden">
+                      <p class="fw-semibold mb-0 text-truncate">{{ $galeria->nome_galeria }}</p>
+                      <p class="fs-7 text-secondary mb-0">
+                        @if($galeria->status_galeria === 'ATIVO')
+                          <span class="badge text-bg-success">
+                            ATIVO
+                          </span>
                         @else
-                        <span class="text-muted">Sem imagem</span>
-                        @endif
-                      </td>
-
-                      <td>
-                        @if($galeria->nome_galeria)
-                        <span>
-                          {{$galeria->nome_galeria}}
-                        </span>
-
-                        @else
-                        <span class="text-muted">
-                          Sem imagem
-                        </span>
-
-                        @endif
-                      </td>
-                      {{--Status--}}
-                            <td>
-                                @if( $galeria->status_galeria === 'ATIVO')
-                              <span class="badge text-bg-success">
-                                Ativo
-                              </span>
-                              @else
-                              <span class="badge text-bg-warning">
-                                Inativo
-                              </span>
-                              @endif
-                            </td>
-                      <td>
-                        <span>
-                          {{$galeria->data_criacao_galeria }} / {{$galeria->data_atualizacao_galeria}}
-                        </span>
-                      </td>
-                      <td class="text-end">
-                        <div class="btn-group btn-group-sm">
-                          <button type="button" class="btn btn-outline-secondary" aria-label="Edit Alexander Pierce">
-                            <i class="bi bi-pencil" aria-hidden="true"> </i>
-                          </button>
-                          <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modal-delete-user" aria-label="Delete Alexander Pierce">
-                            <i class="bi bi-trash" aria-hidden="true"> </i>
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                    @empty
-                    <tr>
-
-                      <td>Nenhum registro encontrado!</td>
-
-
-                    </tr>
-
-                    @endforelse
-                  </tbody>
-                </table>
+                          <span class="badge text-bg-warning">
+                            INATIVO
+                          </span>
+                        @endif</p>
+                    </div>
+                    <div class="dropdown flex-shrink-0">
+                      <button class="btn btn-tool" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Actions for {{ $galeria->nome_galeria}}">
+                        <i class="bi bi-three-dots-vertical" aria-hidden="true"></i>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                          <a class="dropdown-item" href="#">Download</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#">Renomear</a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                          <a class="dropdown-item text-danger" href="#"> Deletar </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </figcaption>
+                </figure>
               </div>
-              <!-- /.table-responsive -->
+            @empty
+            <div class="col" data-gallery-item="places">
+              <p>Nenhum cadastro encontrado.</p>
             </div>
-            <!--end::Card Body-->
-            <!--begin::Card Footer-->
-            <div class="card-footer clearfix">
-              <div class="float-start pt-1 fs-7 text-body-secondary">
-                Pagina 1 de 9 de {{$galeria->count()}} registros
-              </div>
-              <ul class="pagination pagination-sm m-0 float-end">
-                <li class="page-item disabled">
-                  <a class="page-link" href="#" aria-label="Previous"> « </a>
-                </li>
-                <li class="page-item active">
-                  <a class="page-link" href="#">1</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">2</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">3</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">4</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">5</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Next"> » </a>
-                </li>
-              </ul>
-            </div>
-            <!--end::Card Footer-->
+            @endforelse            
           </div>
-          <!--end::Card-->
+          <!--end::Gallery Grid-->
+          <!--begin::Empty State-->
+          <p class="text-secondary text-center my-5" id="gallery-empty" role="status" hidden="">
+            Nothing in this category yet.
+          </p>
+          <!--end::Empty State-->
         </div>
-        <!-- /.col -->
-      </div>
-      <!--end::Row-->
-
-      <!--begin::Add User Modal-->
-      <div class="modal fade" id="modal-add-user" tabindex="-1" aria-labelledby="modal-add-user-label" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <form>
-              <div class="modal-header">
-                <h5 class="modal-title" id="modal-add-user-label">Add new user</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div class="mb-3">
-                  <label for="new-user-name" class="form-label"> Full name <span class="required-indicator sr-only"> (required)</span></label>
-                  <input type="text" class="form-control" id="new-user-name" placeholder="e.g. Jane Doe" required="">
-                </div>
-                <div class="mb-3">
-                  <label for="new-user-email" class="form-label"> Email address <span class="required-indicator sr-only"> (required)</span></label>
-                  <input type="email" class="form-control" id="new-user-email" placeholder="name@example.com" required="">
-                  <div class="form-text">The invitation will be sent to this address.</div>
-                </div>
-                <div class="mb-3">
-                  <label for="new-user-role" class="form-label"> Role </label>
-                  <select id="new-user-role" class="form-select">
-                    <option selected="">Subscriber</option>
-                    <option>Author</option>
-                    <option>Editor</option>
-                    <option>Administrator</option>
-                  </select>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="new-user-welcome" checked="">
-                  <label class="form-check-label" for="new-user-welcome">
-                    Send a welcome email with login details
-                  </label>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                  Cancel
-                </button>
-                <button type="submit" class="btn btn-primary">Create user</button>
-              </div>
-            </form>
-          </div>
+        <!--end::Card Body-->
+        <!--begin::Card Footer-->
+        <div class="card-footer d-flex flex-wrap justify-content-between align-items-center gap-2">
+          <span class="fs-7 text-body-secondary" id="gallery-count" aria-live="polite">
+            Carregando {{ $listaGaleria -> where('status_galeria','ATIVO') -> count() }} de {{ $listaGaleria -> count()}} items
+          </span>
+          <button type="button" class="btn btn-sm btn-primary">
+            <i class="bi bi-upload me-1" aria-hidden="true"></i> Nova Imagem
+          </button>
         </div>
+        <!--end::Card Footer-->
       </div>
-      <!--end::Add User Modal-->
-
-      <!--begin::Delete User Modal-->
-      <div class="modal fade" id="modal-delete-user" tabindex="-1" aria-labelledby="modal-delete-user-label" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modal-delete-user-label">Delete user</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <p class="mb-0">
-                Are you sure you want to delete this user? All content owned by the account
-                will be reassigned to the site administrator. This action cannot be undone.
-              </p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                Cancel
-              </button>
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                Delete user
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--end::Delete User Modal-->
+      <!--end::Card-->
     </div>
     <!--end::Container-->
   </div>

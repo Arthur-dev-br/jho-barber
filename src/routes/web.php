@@ -15,6 +15,8 @@ use App\Http\Controllers\Admin\DepoimentoController;
 use App\Http\Controllers\Admin\GaleriaController as AdminGaleriaController;
 use App\Http\Controllers\Admin\LinhaTempoController;
 use App\Http\Controllers\Admin\NewsletterController;
+use App\Http\Controllers\Admin\ServicoController;
+use App\Http\Controllers\Admin\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
@@ -60,10 +62,19 @@ Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard
 
 
 Route::get('/admin/categoria',[CategoriaController::class, 'index'])->name('admin.categoria.index');
-Route::get('/admin/cliente',[ClienteController::class, 'index'])->name('admin.cliente.index');
-Route::get('/admin/depoimento',[DepoimentoController::class, 'index'])->name('admin.depoimento.index');
-Route::get('/admin/linhatempo',[LinhaTempoController::class, 'index'])->name('admin.linhatempo.index');
-Route::get('/admin/newsletter',[NewsletterController::class, 'index'])->name('admin.newsletter.index');
 
+Route::get('/admin/cliente',[ClienteController::class, 'index'])->name('admin.cliente.index');
+
+Route::get('/admin/depoimento',[DepoimentoController::class, 'index'])->name('admin.depoimento.index');
+
+Route::get('/admin/linhatempo',[LinhaTempoController::class, 'index'])->name('admin.linhatempo.index');
+
+Route::get('/admin/newsletter',
+[NewsletterController::class, 'index'])->name('admin.newsletter.index');
+
+Route::get('/admin/servico',
+[ServicoController::class, 'index'])->name('admin.servico.index');
+
+Route::get('/usuario', [UsuarioController::class, 'index']) ->name('admin.usuario.index');
 
 
