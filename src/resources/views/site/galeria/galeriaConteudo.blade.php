@@ -10,9 +10,12 @@
       </header>
       <div class="cards-galeria wow animate__animated animate__fadeInUp animated_delay 1s">
 
+        @foreach ($listaGaleria as $linha)
         <article>
-          <img src="{{ asset('assets/foto_galeria1.png')}}" alt="Imagem de um cliente após cortar o cabelo">
+          <img src="{{ asset ("jho_barber/assets/$linha->imagem_galeria") }}" alt="{{ $linha->nome_galeria }}">
+          
         </article>
+        @endforeach
       
 
 
