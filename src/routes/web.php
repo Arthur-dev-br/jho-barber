@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\CategoriaController;
 use App\Http\Controllers\Admin\ClienteController;
+use App\Http\Controllers\Admin\ProdutoController as AdminProdutoController;
 use App\Http\Controllers\Admin\DepoimentoController;
 use App\Http\Controllers\Admin\GaleriaController as AdminGaleriaController;
 use App\Http\Controllers\Admin\LinhaTempoController;
@@ -48,7 +49,8 @@ Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard
     // CRUD GALERIA
     Route::get('admin/galeria', [AdminGaleriaController::class, 'index'])->name('admin.galeria.index'); //Lista Galeria
 
-    // CRUD DEPOIMENTO
+    // CRUD PRODUTO
+    Route::get('admin/produto', [AdminProdutoController::class, 'index'])->name('admin.produto.index'); //Lista Produto
 
     // CRUD LINHA DO TEMPO
 
