@@ -70,8 +70,6 @@
                       <th scope="col">Imagem</th>
                       <th scope="col">Titulo</th>
                       <th scope="col">Status</th>
-
-                      <th class="col" scope="col">Data</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -116,11 +114,7 @@
                               </span>
                               @endif
                             </td>
-                      <td>
-                        <span>
-                          {{$galeria->data_criacao_galeria }} / {{$galeria->data_atualizacao_galeria}}
-                        </span>
-                      </td>
+                      
                       <td class="text-end">
                         <div class="btn-group btn-group-sm">
                           <button type="button" class="btn btn-outline-secondary" aria-label="Edit Alexander Pierce">

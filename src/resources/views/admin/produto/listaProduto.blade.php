@@ -6,13 +6,13 @@
       <!--begin::Row-->
       <div class="row">
         <div class="col-sm-6">
-          <h1 class="mb-0 fs-3">Galeria</h1>
+          <h1 class="mb-0 fs-3">Produto</h1>
         </div>
         <div class="col-sm-6">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb float-sm-end">
               <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Galeria</li>
+              <li class="breadcrumb-item active" aria-current="page">Produto</li>
             </ol>
           </nav>
         </div>
@@ -72,32 +72,28 @@
                       <th scope="col">Imagem</th>
                       <th scope="col">Preço</th>
                       <th scope="col">Descrição</th>
-                      <th scope="col">Status</th>
-
-                      <th class="col" scope="col">Data</th>
+                      <th scope="col">Status</th>                   
                     </tr>
                   </thead>
                   <tbody>
-                    @forelse($listaGaleria as $galeria)
+                    @forelse($listaProduto as $produto)
                     <tr>
                       <td>
-                        {{$galeria->id_galeria}}
+                        {{$produto->id_produto}}
                       </td>
                       <td>
-                        @if($galeria->imagem_galeria)
-                        <img src="{{ asset('jho_barber/assets/' . $galeria->imagem_galeria) }}"
-                          alt="{{ $galeria->nome_galeria }}"
-                          class="rounded"
-                          style="width:140px; height:120px; object-fit:cover;">
+                        @if($produto->id_categoria)
+                        {{ $produto->id_categoria }}
+
                         @else
-                        <span class="text-muted">Sem imagem</span>
+                        <span class="text-muted">Sem categoria</span>
                         @endif
                       </td>
 
                       <td>
-                        @if($galeria->nome_galeria)
+                        @if($produto->nome_produto)
                         <span>
-                          {{$galeria->nome_galeria}}
+                          {{$produto->nome_produto}}
                         </span>
 
                         @else
@@ -109,7 +105,7 @@
                       </td>
                       {{--Status--}}
                             <td>
-                                @if( $galeria->status_galeria === 'ATIVO')
+                                @if( $produto->status_produto === 'ATIVO')
                               <span class="badge text-bg-success">
                                 Ativo
                               </span>
@@ -118,12 +114,7 @@
                                 Inativo
                               </span>
                               @endif
-                            </td>
-                      <td>
-                        <span>
-                          {{$galeria->data_criacao_galeria }} / {{$galeria->data_atualizacao_galeria}}
-                        </span>
-                      </td>
+                            </td>                   
                       <td class="text-end">
                         <div class="btn-group btn-group-sm">
                           <button type="button" class="btn btn-outline-secondary" aria-label="Edit Alexander Pierce">
@@ -153,7 +144,7 @@
             <!--begin::Card Footer-->
             <div class="card-footer clearfix">
               <div class="float-start pt-1 fs-7 text-body-secondary">
-                Pagina 1 de 9 de {{$galeria->count()}} registros
+                Pagina 1 de 9 de  registros
               </div>
               <ul class="pagination pagination-sm m-0 float-end">
                 <li class="page-item disabled">

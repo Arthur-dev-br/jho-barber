@@ -7,7 +7,7 @@ use App\Models\Galeria;
 
 class GaleriaController extends Controller
 {
-    public function galeria(){
+    public function index(){
 
         $listaGaleria = Galeria::where('status_galeria', 'ATIVO')->get();
 
