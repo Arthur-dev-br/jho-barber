@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers\Site;
 
-Use App\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
+use App\Models\Servicos;
 
 class ServicosController extends Controller
 {
-    public function sobre(){
-        return view('site.servicos.servicos');
+    public function servicos()
+    {
+        $servicos = Servicos::where('status_servicos', 'ATIVO')
+            ->orderByDesc('id_servicos')
+            ->get();
+
+        return view('site.servicos.servicos', compact('servicos'));
     }
 }

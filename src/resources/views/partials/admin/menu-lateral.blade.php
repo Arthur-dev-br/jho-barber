@@ -108,7 +108,7 @@
               </li>
 
                <li class="nav-item">
-                <a href="{{route('admin.servico.index')}}" class="nav-link">
+                <a href="{{route('admin.servicos.index')}}" class="nav-link">
                   <i class="nav-icon bi bi-circle-fill"></i>
                   <p>Serviços</p>
                 </a>

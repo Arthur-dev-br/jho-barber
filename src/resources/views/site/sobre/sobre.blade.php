@@ -2,9 +2,6 @@
 
 @section ('content')
 
-
-
-
-
+   @include('site.sobre.sobre')
 
 @endsection

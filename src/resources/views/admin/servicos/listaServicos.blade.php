@@ -75,19 +75,19 @@
                           </tr>
                         </thead>
                         <tbody>
-                        @forelse($listaServico as $categoria)
+                        @forelse($listaServicos as $servicos)
                           <tr>
 
                             {{--ID--}}
                             <td>
-                              {{$servico->id_servico}}
+                              {{$servicos->id_servicos}}
                             </td>
                             
                             {{--Nome--}}
                             <td>
-                              @if($servico->nome_servico)
+                              @if($servicos->nome_servicos)
                               <span>
-                                {{$servico->nome_servico}}
+                                {{$servicos->nome_servicos}}
                               </span>
                              
                                 @else
@@ -101,23 +101,23 @@
                             {{--Descrição--}}
                             <td>
                               <span  class="badge text-bg-success">
-                                {{ $servico->descricao_servico}}
+                                {{ $servicos->descricao_servicos}}
                               </span>
                             </td>
 
                              {{--Valor--}}
                               <td>
                               <span  class="badge text-bg-success">
-                                {{ $servico->valor_servico}}
+                                {{ $servicos->valor_servicos}}
                               </span>
                             </td>
 
                             {{--Imagem--}}
                             <td>
-                             @if($servico->imagem_servico)
+                             @if($servicos->imagem_servicos)
                              <img 
-                                src="{{ asset('jho_barber/assets/' . $servico->imagem_servico) }}" 
-                                alt="{{ $servico->nome_servico }}"
+                                src="{{ asset('jho_barber/assets/' . $servicos->imagem_servicos) }}" 
+                                alt="{{ $servicos->nome_servicos}}"
                                 class="rounded"
                                 style="
                                   width: 100px;
@@ -133,7 +133,7 @@
 
                            {{--Status--}}
                             <td>
-                                @if( $servico->status_servico === 'ATIVO')
+                                @if( $servicos->status_servicos === 'ATIVO')
                               <span class="badge text-bg-success">
                                 Ativo
                               </span>
@@ -174,7 +174,7 @@
                   <!--begin::Card Footer-->
                   <div class="card-footer clearfix">
                     <div class="float-start pt-1 fs-7 text-body-secondary">
-                     Total de serviços: {{$listaServico->count()}}
+                     Total de serviços: {{$listaServicos->count()}}
                     </div>
                     
                   </div>

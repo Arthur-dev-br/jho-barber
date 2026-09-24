@@ -14,8 +14,7 @@
 
                 <li><a href="{{ route('sobre') }}">Sobre</a></li>
 
-                <li><a class="<?php if ($pgAtual == 'servicos.php')
-                                    echo 'menu-ativo'; ?>" href="servicos.php">Serviços</a></li>
+               <li><a href="{{ route('servicos') }}">Serviços</a></li>
 
                 <li><a href="{{ route('produto') }}">Produtos</a></li>
 
