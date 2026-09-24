@@ -5,9 +5,12 @@ use App\Http\Controllers\Site\ContatoController;
 use App\Http\Controllers\Site\HomeController;
 use App\Http\Controllers\Site\SobreController;
 use App\Http\Controllers\Site\GaleriaController;
+use App\Http\Controllers\Site\ServicosController;
 
 
 use App\Http\Controllers\Admin\AdminController;
+
+
 use App\Http\Controllers\Admin\AdminProdutoController as AdminAdminProdutoController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\CategoriaController;
@@ -17,7 +20,7 @@ use App\Http\Controllers\Admin\DepoimentoController;
 use App\Http\Controllers\Admin\GaleriaController as AdminGaleriaController;
 use App\Http\Controllers\Admin\LinhaTempoController;
 use App\Http\Controllers\Admin\NewsletterController;
-use App\Http\Controllers\Admin\ServicoController;
+use App\Http\Controllers\Admin\ServicosController as AdminServicosController;
 use App\Http\Controllers\Admin\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +32,8 @@ Route::get('/produto/categoria/{idCategoria}', [ProdutoController::class, 'produ
 
 Route::get('/galeria', [GaleriaController::class, 'galeria'])->name('galeria');
 Route::get('/contato', [ContatoController::class, 'contato'])->name('contato');
+
+Route::get('/servicos', [ServicosController::class, 'servicos'])->name('servicos');
 
 
 
@@ -55,11 +60,37 @@ Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard
     // CRUD PRODUTO
     Route::get('admin/produto', [AdminProdutoController::class, 'index'])->name('admin.produto.index');//Lista Produto
 
+    
+    /*
+    |--------------------------------------------------------------------------
+    | CRUD CLIENTE
+    |--------------------------------------------------------------------------
+    */
+
+    //Lista Cliente
+    Route::get('admin/cliente', [AdminClienteController::class, 'index'])->name('admin.cliente.index');
+
+    // Cadastrar cliente
+    Route::post('/cliente', [ClienteController::class, 'store'])
+            ->name('admin.cliente.store');
+
+    // Editar cliente
+    // Route::get('/cliente/{id}/editar', [ClienteController::class, 'edit'])
+    //     ->name('admin.cliente.edit');
+
+    // Atualizar cliente
+    Route::put('/cliente/{id}', [ClienteController::class, 'update'])
+            ->name('admin.cliente.update');
+
+    // Ativar / desativar cliente
+    Route::patch('/cliente/{id}', [AdminClienteController::class, 'status'])
+            ->name('admin.cliente.status');
+
+
+
     // CRUD LINHA DO TEMPO
 
     // CRUD NEWSLETTER
-
-    // CRUD CLIENTE
 
     // CRUD CATEGORIA
 
@@ -75,8 +106,7 @@ Route::get('/admin/linhatempo',[LinhaTempoController::class, 'index'])->name('ad
 Route::get('/admin/newsletter',
 [NewsletterController::class, 'index'])->name('admin.newsletter.index');
 
-Route::get('/admin/servico',
-[ServicoController::class, 'index'])->name('admin.servico.index');
+Route::get('/admin/servicos', [AdminServicosController::class, 'index'])->name('admin.servicos.index');
 
 Route::get('/usuario', [UsuarioController::class, 'index']) ->name('admin.usuario.index');
 
