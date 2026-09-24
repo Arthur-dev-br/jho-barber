@@ -41,9 +41,9 @@
               <li class="nav-header">PRODUTOS</li>
               
               <li class="nav-item">
-                <a href="./users.html" class="nav-link">
-                  <i class="nav-icon bi bi-people"></i>
-                  <p>Users</p>
+                <a href="{{ route('admin.produto.index') }}" class="nav-link">
+                  <i class="nav-icon bi bi-circle-fill"></i>
+                  <p>Produtos</p>
                 </a>
               </li>
 

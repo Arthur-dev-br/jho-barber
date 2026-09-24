@@ -8,6 +8,7 @@ use App\Http\Controllers\Site\GaleriaController;
 
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminProdutoController as AdminAdminProdutoController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\CategoriaController;
 use App\Http\Controllers\Admin\ClienteController;
@@ -47,10 +48,10 @@ Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard
     Route::patch('/banner/{id}/status', [BannerController::class, 'status'])->name('admin.banner.status');//Ativar o Desativar Banner
 
     // CRUD GALERIA
-    Route::get('admin/galeria', [AdminGaleriaController::class, 'index'])->name('admin.galeria.index'); //Lista Galeria
+   Route::get('admin/galeria', [AdminGaleriaController::class, 'index'])->name('admin.galeria.index'); //Lista Galeria
 
     // CRUD PRODUTO
-    Route::get('admin/produto', [AdminProdutoController::class, 'index'])->name('admin.produto.index'); //Lista Produto
+    Route::get('admin/produto', [AdminProdutoController::class, 'index'])->name('admin.produto.index');//Lista Produto
 
     // CRUD LINHA DO TEMPO
 

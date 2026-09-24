@@ -23,7 +23,7 @@
              @if (session('sucesso'))
                <div class="alert alert-success" role="alert">
                <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
-                {{ session('sucesso'); }}
+                {{ session('sucesso') }}
                  A simple success alert—check it out!
                </div>
              @endif
@@ -32,7 +32,7 @@
                <!-- ERRO ALERTA -->
                <div class="alert alert-danger" role="alert">
                <i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i>
-                {{ session('erro'); }}
+                {{ session('erro') }}
                 A simple danger alert—check it out!
                </div>
              @endif
@@ -94,8 +94,7 @@
                             <th scope="col">ID</th>
                             <th scope="col">Imagem</th>
                             <th scope="col">Titulo</th>
-                            <th scope="col">Status</th>
-                            <th class="col" scope="col">Data</th>
+                            <th scope="col">Status</th>                       
                           </tr>
                         </thead>
                         <tbody>
@@ -151,14 +150,7 @@
                                 Inativo
                               </span>
                               @endif
-                            </td>
-                            
-                            <td>
-                              <span>
-                                {{$banner->data_criacao_banner }} / {{$banner->data_atualizacao_banner}}
-                              </span>
-
-                            </td>
+                            </td>                                       
                             <td class="text-end">
                               <div class="btn-group btn-group-sm">
                                 <button type="button" class="btn btn-outline-secondary" aria-label="Edit Alexander Pierce">
