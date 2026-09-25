@@ -1,43 +1,162 @@
- @extends('layout.site')
+<section class="servicos" id="servicos">
 
- @section('content')
+```
+<div class="container">
 
-  <section class="servicos">
-      <header class="parallax-padrao">
-        <h2>
-          Nossos Serviços
-        </h2>
-        <h3>
-          confira a variedade de trabalhos oferecidos em nosso local
-        </h3>
+    <div class="cabecalho-secao cabecalho-secao--centralizado">
+      
+        <h2>Nossos serviços</h2>
 
-      </header>
+        <p>
+            Confira os serviços disponíveis na Jho Barber.
+        </p>
+    </div>
 
-      <div class="site card-produtos">
-        @foreach ($servicos as $linha)
+    <div class="grade-servicos">
 
-        <div class="card-flip wow animate__animated animate__fadeInUp animate__delay-1s">
-          <article class="card-flip-miolo">
+        @forelse($servicos as $linha)
 
-            <div class="flip1 flip1serv">
-              <h4>{{ $linha->nome_servicos}} </h4>
-            </div>
-            <div class="flip2">
-              <h4>
-                {{ $linha->nome_servicos}} <span>R$ {{ number_format ($linha->valor_servicos, 2, ',', '.') }}</span></h4>
-            
-              <h5>
-                {{ $linha->descricao_servicos }}
-              </h5>
+            @if($linha->status_servicos === 'ATIVO')
 
-            </div>
+                <article class="servico">
 
-          </article>
+                    <div class="servico__imagem">
+
+                        @if($linha->imagem_servicos)
+
+                            <img
+                                src="{{ asset('jho_barber/assets/servicos/' . $linha->imagem_servicos) }}"
+                                alt="{{ $linha->nome_servicos }}"
+                            >
+
+                        @else
+
+                            <div class="servico__imagem-vazia">
+                                Imagem em breve
+                            </div>
+
+                        @endif
+
+                    </div>
+
+                    <h3>
+                        {{ $linha->nome_servicos }}
+                    </h3>
+
+                    <p class="servico__descricao">
+                        {{ $linha->descricao_servicos }}
+                    </p>
+
+                    <div class="servico__rodape">
+
+                        <div class="servico__valor">
+                            R$ {{ number_format($linha->valor_servicos, 2, ',', '.') }}
+                        </div>
+
+                        <button
+                            type="button"
+                            class="botao-detalhes"
+                            data-abrir-detalhes
+                            data-nome="{{ $linha->nome_servicos }}"
+                            data-descricao="{{ $linha->descricao_servicos }}"
+                            data-preco="R$ {{ number_format($linha->valor_servicos, 2, ',', '.') }}"
+                            data-imagem="{{ $linha->imagem_servicos ? asset('jho_barber/assets/servicos/' . $linha->imagem_servicos) : '' }}"
+                        >
+                            Ver detalhes
+                        </button>
+
+                    </div>
+
+                </article>
+
+            @endif
+
+        @empty
+
+            <p class="mensagem-vazia">
+                Nenhum serviço disponível no momento.
+            </p>
+
+        @endforelse
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- ====================== MODAL DE SERVIÇO ====================== -->
+
+<div class="modal-servico" data-modal-servico hidden>
+
+```
+<div class="modal-servico__fundo" data-fechar-modal-servico></div>
+
+<section
+    class="modal-servico__janela"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-servico-titulo"
+    aria-describedby="modal-servico-descricao"
+>
+
+    <button
+        class="modal-servico__fechar"
+        type="button"
+        data-fechar-modal-servico
+        aria-label="Fechar detalhes"
+    >
+        ×
+    </button>
+
+    <div class="modal-servico__imagem">
+
+        <img
+            data-modal-servico-imagem
+            src=""
+            alt=""
+        >
+
+        <div
+            class="modal-servico__imagem-vazia"
+            data-modal-servico-sem-imagem
+            hidden
+        >
+            Imagem em breve
         </div>
 
-        @endforeach
+    </div>
 
-      </div>
+    <div class="modal-servico__conteudo">
 
-    </section>
-   @endsection
+        <h2
+            id="modal-servico-titulo"
+            data-modal-servico-titulo
+        ></h2>
+
+        <p
+            id="modal-servico-descricao"
+            data-modal-servico-descricao
+        ></p>
+
+        <p
+            class="modal-servico__preco"
+            data-modal-servico-preco
+        ></p>
+
+        <button
+            type="button"
+            class="botao-detalhes"
+            data-fechar-modal-servico
+        >
+            Fechar
+        </button>
+
+    </div>
+
+</section>
+```
+
+</div>
+<!-- ======================== FIM DO MODAL ======================== -->
