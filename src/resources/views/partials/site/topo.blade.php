@@ -14,15 +14,13 @@
 
                 <li><a href="{{ route('sobre') }}">Sobre</a></li>
 
-                <li><a class="<?php if ($pgAtual == 'servicos.php')
-                                    echo 'menu-ativo'; ?>" href="servicos.php">Serviços</a></li>
+                <li><a href="{{ route('servicos') }}">Serviços</a></li>
 
                 <li><a href="{{ route('produto') }}">Produtos</a></li>
 
                 <li><a href="{{ route('galeria') }}">Galeria</a></li>
 
-                <li><a class="<?php if ($pgAtual == 'contato.php')
-                                    echo 'menu-ativo'; ?>" href="contato.php">Contato</a></li>
+                <li><a href="{{ route('contato') }}">Contato</a></li>
             </ul>
 
         </nav>

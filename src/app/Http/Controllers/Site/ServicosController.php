@@ -6,7 +6,7 @@ Use App\Http\Controllers\Controller;
 
 class ServicosController extends Controller
 {
-    public function sobre(){
+    public function servicos(){
         return view('site.servicos.servicos');
     }
 }
