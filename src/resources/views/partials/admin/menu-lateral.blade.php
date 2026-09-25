@@ -102,9 +102,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('admin.linhatempo.index')}}" class="nav-link">
+                <a href="{{route('admin.mensagem.index')}}" class="nav-link">
                   <i class="nav-icon bi bi-circle-fill"></i>
-                  <p>Linha do tempo</p>
+                  <p>Mensagens</p>
                 </a>
               </li>
 
