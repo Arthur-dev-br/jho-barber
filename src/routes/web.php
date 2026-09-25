@@ -6,9 +6,11 @@ use App\Http\Controllers\Site\HomeController;
 use App\Http\Controllers\Site\SobreController;
 use App\Http\Controllers\Site\GaleriaController;
 use App\Http\Controllers\Site\ServicosController;
- 
- 
+
+
 use App\Http\Controllers\Admin\AdminController;
+
+
  
  
 use App\Http\Controllers\Admin\BannerController;
@@ -32,17 +34,8 @@ Route::get('/produto/categoria/{idCategoria}', [ProdutoController::class, 'produ
  
 Route::get('/galeria', [GaleriaController::class, 'galeria'])->name('galeria');
 Route::get('/contato', [ContatoController::class, 'contato'])->name('contato');
- 
+
 Route::get('/servicos', [ServicosController::class, 'servicos'])->name('servicos');
- 
-
-// formulário site
-
-Route::post('/contato', [ContatoController::class, 'store'])->middleware('throttle:5,1,contato')->name('contato.store');
-
-
-
-
 
  
  
@@ -67,42 +60,42 @@ Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard
  
     // CRUD GALERIA
    Route::get('admin/galeria', [AdminGaleriaController::class, 'index'])->name('admin.galeria.index'); //Lista Galeria
- 
+
     // CRUD PRODUTO
     Route::get('admin/produto', [AdminProdutoController::class, 'index'])->name('admin.produto.index');//Lista Produto
- 
-   
+
+    
     /*
     |--------------------------------------------------------------------------
     | CRUD CLIENTE
     |--------------------------------------------------------------------------
     */
- 
+
     //Lista Cliente
     Route::get('admin/cliente', [AdminClienteController::class, 'index'])->name('admin.cliente.index');
- 
+
     // Cadastrar cliente
     Route::post('/cliente', [AdminClienteController::class, 'store'])
             ->name('admin.cliente.store');
- 
+
     // Editar cliente
     // Route::get('/cliente/{id}/editar', [ClienteController::class, 'edit'])
     //     ->name('admin.cliente.edit');
- 
+
     // Atualizar cliente
     Route::put('/cliente/{id}', [AdminClienteController::class, 'update'])
             ->name('admin.cliente.update');
- 
+
     // Ativar / desativar cliente
     Route::patch('/cliente/{id}', [AdminClienteController::class, 'status'])
             ->name('admin.cliente.status');
- 
- 
- 
+
+
+
     // CRUD LINHA DO TEMPO
  
     // CRUD NEWSLETTER
- 
+
     // CRUD CATEGORIA
 
     
@@ -122,20 +115,18 @@ Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard
  
  
 Route::get('/admin/categoria',[CategoriaController::class, 'index'])->name('admin.categoria.index');
- 
+
 Route::get('/admin/cliente',[AdminClienteController::class, 'index'])->name('admin.cliente.index');
- 
+
 Route::get('/admin/depoimento',[DepoimentoController::class, 'index'])->name('admin.depoimento.index');
- 
+
 Route::get('/admin/linhatempo',[LinhaTempoController::class, 'index'])->name('admin.linhatempo.index');
- 
+
 Route::get('/admin/newsletter',
 [NewsletterController::class, 'index'])->name('admin.newsletter.index');
- 
+
 Route::get('/admin/servicos', [AdminServicosController::class, 'index'])->name('admin.servicos.index');
- 
+
 Route::get('/usuario', [UsuarioController::class, 'index']) ->name('admin.usuario.index');
- 
- 
- 
- 
+
+

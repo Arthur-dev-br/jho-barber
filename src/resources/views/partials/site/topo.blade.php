@@ -14,7 +14,11 @@
 
                 <li><a href="{{ route('sobre') }}">Sobre</a></li>
 
+<<<<<<< HEAD
                 <li><a href="{{ route('servicos') }}">Serviços</a></li>
+=======
+               <li><a href="{{ route('servicos') }}">Serviços</a></li>
+>>>>>>> refs/remotes/origin/master
 
                 <li><a href="{{ route('produto') }}">Produtos</a></li>
 

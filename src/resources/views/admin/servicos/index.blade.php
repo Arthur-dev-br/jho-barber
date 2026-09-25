@@ -2,6 +2,6 @@
 
 @section('content')
 
-    @include('admin.produto.listaProduto')
+    @include('admin.servicos.listaServicos')
 
 @endsection

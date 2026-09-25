@@ -12,6 +12,11 @@ class GaleriaController extends Controller
     {
         $listaGaleria = Galeria::orderByDesc('id_galeria')->get();
 
-        return view('admin.galeria.index', compact('listaGaleria'));
+        $statusGaleria = Galeria::select('status_galeria')
+        ->distinct()
+        ->get();
+
+
+        return view('admin.galeria.index', compact('listaGaleria', 'statusGaleria'));
     }
 }

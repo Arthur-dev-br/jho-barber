@@ -18,6 +18,24 @@
               </div>
             </div>
             <!--end::Row-->
+
+             {{-- ALERTA SUCESSO --}} 
+            @if(session('sucesso'))
+              <div class="alert alert-success" role="alert">
+                 <i class="bi bi-check-circle-fill"></i>
+                {{session('sucesso')}}        
+             </div>
+            @endif
+
+             {{-- ALERTA ERRO --}} 
+            @if(session('erro'))
+              <div class="alert alert-danger" role="alert">
+                <i class="bi bi-exclamation-circle-fill"></i>
+                {{session('erro')}}           
+              </div>
+            @endif
+
+
           </div>
           <!--end::Container-->
         </div>
@@ -35,7 +53,8 @@
                   <div class="card-header">
                     <div class="row g-2 align-items-center">
                       <div class="col-12 col-md-4">
-                        <h3 class="card-title">Diretório do usuário</h3>
+                        <h3 class="card-title">Clientes cadastrados</h3>
+                      
                       </div>
                       <div class="col-12 col-md-8">
                         <div class="d-flex flex-wrap justify-content-md-end gap-2">
@@ -43,7 +62,7 @@
                             <span class="input-group-text">
                               <i class="bi bi-search" aria-hidden="true"></i>
                             </span>
-                            <input type="search" id="user-search" class="form-control" placeholder="Pesquisar cliente" aria-label="Pesquisar cliente" style="width: 180px">
+                            <input type="search" id="cliente-search" class="form-control" placeholder="Pesquisar cliente" aria-label="Pesquisar cliente" style="width: 180px">
                           </div>
                           <select id="user-role-filter" class="form-select form-select-sm w-auto" aria-label="Filter by role">
                             <option value="all" selected="">Todos</option>
@@ -51,7 +70,7 @@
                             <option value="Inativos">Inativos</option>
                             
                           </select>
-                          <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal-add-user">
+                          <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal-add-cliente">
                             <i class="bi bi-person-plus-fill me-1" aria-hidden="true"> </i>
                             Novo cliente
                           </button>
@@ -69,9 +88,13 @@
                             <th scope="col">ID</th>
                             <th scope="col">Nome</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Senha</th>
+                           
                             <th scope="col">Foto</th>
                             <th scope="col">Status</th>
+                            <th class="text-end">
+                                Ações
+                            </th>
+                            
                           </tr>
                         </thead>
                         <tbody>
@@ -148,12 +171,66 @@
                             
                             <td class="text-end">
                               <div class="btn-group btn-group-sm">
-                                <button type="button" class="btn btn-outline-secondary" aria-label="Edit Alexander Pierce">
+                                {{-- EDITAR --}}
+                                <button
+                                 type="button" 
+                                 class="btn btn-outline-secondary"
+                                 data-bs-toggle="modal" data-bs-target="#modal-edit-cliente" 
+                                 data-id="{{ $cliente->id_cliente }}"
+                                 data-titulo="{{ $cliente->titulo_cliente }}"
+                                 data-email="{{ $cliente->email_cliente }}"
+                                 data-status="{{ $cliente->status_cliente }}"
+                                 data-image="{{ asset('jho_barber/assets/' . $cliente->imagem_cliente) }}"
+                                 data-url="{{ route('admin.cliente.update', $cliente->id_cliente) }}"          
+                                 aria-label="Editar"
+                                 >
                                   <i class="bi bi-pencil" aria-hidden="true"> </i>
                                 </button>
-                                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modal-delete-user" aria-label="Delete Alexander Pierce">
-                                  <i class="bi bi-trash" aria-hidden="true"> </i>
-                                </button>
+
+                                {{-- INICIO: ATIVAR / DESATIVAR --}}
+                              <form
+                                action="{{ route('admin.cliente.status', $cliente->id_cliente) }}"
+                                method="POST" class="d-inline">
+                                  @csrf
+                                  @method('PATCH')
+
+                                  @if($cliente->status_cliente === 'ATIVO')
+                                    <button 
+                                      type="submit" 
+                                      class="btn btn-outline-danger" 
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#modal-status-cliente" 
+                                      title="Desativar cliente"
+                                      data-url="{{ route('admin.cliente.status', $cliente->id_cliente) }}"
+                                      data-titulo="{{ $cliente->id_cliente }}"
+                                      data-status="ATIVO"
+                                      aria-label="Deletar">
+                                     <i class="bi bi-eye"></i>
+                                    </button>
+
+                                         @else
+
+                                    <button 
+                                      type="submit" 
+                                      class="btn btn-outline-success" 
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#modal-status-cliente" 
+                                      title="Desativar cliente"
+                                      data-url="{{ route('admin.cliente.status', $cliente->id_cliente) }}"
+                                      data-titulo="{{ $cliente->id_cliente }}"
+                                      data-status="INATIVO"
+                                      aria-label="Deletar">
+                                     <i class="bi bi-eye-slash"></i>
+                                    </button>
+
+ 
+                                  @endif
+                              </form>
+
+                                
+                                {{-- FIM: ATIVAR / DESATIVAR --}}
+
+
                               </div>
                             </td>
                           </tr>
@@ -175,30 +252,8 @@
                   <!--begin::Card Footer-->
                   <div class="card-footer clearfix">
                     <div class="float-start pt-1 fs-7 text-body-secondary">
-                      Pagina 1 de 9 de {{$listaCliente->count()}} registros
+                      Total de clientes: {{$listaCliente->count()}} 
                     </div>
-                    <ul class="pagination pagination-sm m-0 float-end">
-                      <li class="page-item disabled">
-                        <a class="page-link" href="#" aria-label="Previous"> « </a>
-                      </li>
-                      <li class="page-item active">
-                        <a class="page-link" href="#">1</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link" href="#">2</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link" href="#">3</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link" href="#">4</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link" href="#">5</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next"> » </a>
-                      </li>
                     </ul>
                   </div>
                   <!--end::Card Footer-->
@@ -209,18 +264,26 @@
             </div>
             <!--end::Row-->
 
-            <!--begin::Add User Modal-->
-            <div class="modal fade" id="modal-add-user" tabindex="-1" aria-labelledby="modal-add-user-label" aria-hidden="true">
+            {{-- INICIO - MODAL CADASTRO CLIENTE --}}
+            <div class="modal fade" id="modal-add-cliente" tabindex="-1" aria-labelledby="modal-add-cliente-label" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
-                  <form>
+
+                  {{-- FORMA DE CADASTRO --}}
+                  <form
+                  action="{{ route('admin.cliente.store') }}"
+                    method="POST"
+                    enctype="multipart/form-data"> {{-- só quando tiver arquivo --}}
+                    @csrf 
+                  >
+                    
                     <div class="modal-header">
-                      <h5 class="modal-title" id="modal-add-user-label">Novo cliente</h5>
+                      <h5 class="modal-title" id="modal-add-cliente-label">Novo cliente</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                       <div class="mb-3">
-                        <label for="new-user-name" class="form-label"> Nome Completo <span class="required-indicator sr-only"> (required)</span></label>
+                        <label for="new-cliente-name" class="form-label"> Nome Completo <span class="required-indicator sr-only"> (required)</span></label>
                         <input type="text" class="form-control" id="new-user-name" placeholder=" Nome Completo" required="">
                       </div>
                       <div class="mb-3">
