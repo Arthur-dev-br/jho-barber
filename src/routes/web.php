@@ -17,8 +17,7 @@ use App\Http\Controllers\Admin\ClienteController as AdminClienteController;
 use App\Http\Controllers\Admin\ProdutoController as AdminProdutoController;
 use App\Http\Controllers\Admin\DepoimentoController;
 use App\Http\Controllers\Admin\GaleriaController as AdminGaleriaController;
-use App\Http\Controllers\Admin\LinhaTempoController;
-use App\Http\Controllers\Admin\NewsletterController;
+use App\Http\Controllers\Admin\CategoriaServicosController;
 use App\Http\Controllers\Admin\ServicosController as AdminServicosController;
 use App\Http\Controllers\Admin\UsuarioController;
 use Illuminate\Support\Facades\Route;
@@ -100,12 +99,9 @@ Route::get('/admin/cliente',[AdminClienteController::class, 'index'])->name('adm
 
 Route::get('/admin/depoimento',[DepoimentoController::class, 'index'])->name('admin.depoimento.index');
 
-Route::get('/admin/linhatempo',[LinhaTempoController::class, 'index'])->name('admin.linhatempo.index');
-
-Route::get('/admin/newsletter',
-[NewsletterController::class, 'index'])->name('admin.newsletter.index');
-
 Route::get('/admin/servicos', [AdminServicosController::class, 'index'])->name('admin.servicos.index');
+
+Route::get('/admin/categoria_servicos',[CategoriaServicosController::class, 'index'])->name('admin.categoria_servicos.index');
 
 Route::get('/usuario', [UsuarioController::class, 'index']) ->name('admin.usuario.index');
 

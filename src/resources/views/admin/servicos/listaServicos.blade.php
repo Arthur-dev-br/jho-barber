@@ -68,6 +68,7 @@
                           <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Nome</th>
+                            <th scope="col">Categoria</th>
                             <th scope="col">Descrição</th>
                             <th scope="col">Valor</th>
                             <th scope="col">Imagem</th>
@@ -97,6 +98,22 @@
 
                              @endif
                             </td>
+
+                            {{-- Categoria --}}
+
+                             <td>
+                        @if($servicos->id_categoria_servicos)
+                        <span>
+                           {{ $servicos->categoria_servicos->nome_categoria_servicos }}
+                        </span>
+
+                        @else
+                        <span class="text-muted">
+                          Sem categoria
+                        </span>
+
+                        @endif
+                      </td>
 
                             {{--Descrição--}}
                             <td>

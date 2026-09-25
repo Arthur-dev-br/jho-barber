@@ -1,5 +1,26 @@
 <section class="servicos" id="servicos">
 
+    <!-- <section class="produto">
+      <header class="parallax-padrao">
+        <h2>
+          Produto | {{$categoriaSelecionada->nome_categoria}}
+        </h2>
+
+        
+        
+        
+          <nav class="menu-categorias">
+            @foreach($listaCategorias as $linha)
+              <ul class="botao-categorias">
+                  <li>
+                      <a href=" {{route('produto.categoria',$linha->id_categoria)}} ">{{$linha->nome_categoria}}</a>
+                  </li>
+              </ul>
+            @endforeach
+          </nav>
+               
+      </header>
+
 ```
 <div class="container">
 
