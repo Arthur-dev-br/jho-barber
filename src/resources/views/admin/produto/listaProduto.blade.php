@@ -82,39 +82,60 @@
                         {{$produto->id_produto}}
                       </td>
                       <td>
-                        @if($produto->id_categoria)
-                        {{ $produto->id_categoria }}
+                        @if($produto->nome_produto)
+                        {{ $produto->nome_produto }}
 
                         @else
-                        <span class="text-muted">Sem categoria</span>
+                        <span class="text-muted">Sem produto</span>
                         @endif
                       </td>
 
                       <td>
-                        @if($produto->nome_produto)
+                        @if($produto->id_categoria)
                         <span>
-                          {{$produto->nome_produto}}
+                           {{ $produto->categoria->nome_categoria }}
                         </span>
 
                         @else
                         <span class="text-muted">
-                          Sem imagem
+                          Sem categoria
                         </span>
 
                         @endif
                       </td>
-                      {{--Status--}}
+                      {{--Imagem--}}
                             <td>
-                                @if( $produto->status_produto === 'ATIVO')
-                              <span class="badge text-bg-success">
-                                Ativo
-                              </span>
-                              @else
-                              <span class="badge text-bg-warning">
-                                Inativo
-                              </span>
-                              @endif
-                            </td>                   
+                              @if($produto->imagem_produto)
+                              <img src= "{{ asset('jho_barber/assets/' . $produto->imagem_produto) }}"
+                                    alt="{{$produto->nome_produto }}"
+                                    class = "rounded"
+                                    style="
+                                        width:140px;
+                                        height:90px;
+                                        object-fit:cover;
+                                    "
+                              >
+                                @else
+                                    <span class="text-muted">
+                                        Sem imagem
+                                    </span>
+                                    
+                                    @endif
+                            </td>
+
+                            <td>
+                              R$ {{ number_format($produto->preco_produto, 2, ',', '.') }}
+                            </td>
+
+                            <td>
+                              {{ $produto->descricao_produto }}
+                            </td>
+
+                            <td>
+                              {{ $produto->status_produto }}
+                            </td>
+                                    
+                                    
                       <td class="text-end">
                         <div class="btn-group btn-group-sm">
                           <button type="button" class="btn btn-outline-secondary" aria-label="Edit Alexander Pierce">

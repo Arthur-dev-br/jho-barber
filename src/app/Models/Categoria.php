@@ -16,7 +16,7 @@ class Categoria extends Model{
 
     protected $fillable = [
         'nome_categoria',
-        'status_categoria',
+        'status_categoria'
     ];
 
     // Um Cliente pode possuir muitos depoimentos.

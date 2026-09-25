@@ -23,7 +23,7 @@
              @if (session('sucesso'))
                <div class="alert alert-success" role="alert">
                <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
-                {{ session('sucesso'); }}
+                {{ session('sucesso')}}
                  A simple success alert—check it out!
                </div>
              @endif
@@ -32,7 +32,7 @@
                <!-- ERRO ALERTA -->
                <div class="alert alert-danger" role="alert">
                <i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i>
-                {{ session('erro'); }}
+                {{ session('erro') }}
                 A simple danger alert—check it out!
                </div>
              @endif
