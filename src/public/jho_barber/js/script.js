@@ -77,3 +77,113 @@ window.onscroll = function () {
   }
 
 }
+
+const modalServico = document.querySelector("[data-modal-servico]");
+const corpo = document.body;
+
+if (modalServico) {
+
+    const botoesDetalhes = document.querySelectorAll("[data-abrir-detalhes]");
+
+    const imagemModal = modalServico.querySelector("[data-modal-servico-imagem]");
+    const imagemSemFoto = modalServico.querySelector("[data-modal-servico-sem-imagem]");
+    const tituloModal = modalServico.querySelector("[data-modal-servico-titulo]");
+    const descricaoModal = modalServico.querySelector("[data-modal-servico-descricao]");
+    const precoModal = modalServico.querySelector("[data-modal-servico-preco]");
+
+    let elementoAnterior = null;
+
+    function abrirModalServico(botao) {
+
+        elementoAnterior = document.activeElement;
+
+        const nome = botao.dataset.nome;
+        const descricao = botao.dataset.descricao;
+        const preco = botao.dataset.preco;
+        const imagem = botao.dataset.imagem;
+
+        tituloModal.textContent = nome;
+        descricaoModal.textContent = descricao;
+        precoModal.textContent = preco;
+
+        if (imagem) {
+
+            imagemModal.src = imagem;
+            imagemModal.alt = nome;
+
+            imagemModal.hidden = false;
+            imagemSemFoto.hidden = true;
+
+        } else {
+
+            imagemModal.hidden = true;
+            imagemSemFoto.hidden = false;
+
+        }
+
+        modalServico.hidden = false;
+
+        corpo.classList.add("modal-servico-aberto");
+
+        const janela = modalServico.querySelector(".modal-servico__janela");
+
+        janela.classList.remove(
+            "animate__animated",
+            "animate__zoomIn"
+        );
+
+        void janela.offsetWidth;
+
+        janela.classList.add(
+            "animate__animated",
+            "animate__zoomIn"
+        );
+
+        modalServico
+            .querySelector(".modal-servico__fechar")
+            .focus();
+    }
+
+
+    function fecharModalServico() {
+
+        modalServico.hidden = true;
+
+        corpo.classList.remove("modal-servico-aberto");
+
+        if (elementoAnterior) {
+            elementoAnterior.focus();
+        }
+    }
+
+
+    botoesDetalhes.forEach((botao) => {
+
+        botao.addEventListener("click", () => {
+            abrirModalServico(botao);
+        });
+
+    });
+
+
+    modalServico
+        .querySelectorAll("[data-fechar-modal-servico]")
+        .forEach((elemento) => {
+
+            elemento.addEventListener(
+                "click",
+                fecharModalServico
+            );
+
+        });
+
+
+    document.addEventListener("keydown", (evento) => {
+
+        if (evento.key === "Escape" && !modalServico.hidden) {
+            fecharModalServico();
+        }
+
+    });
+
+}

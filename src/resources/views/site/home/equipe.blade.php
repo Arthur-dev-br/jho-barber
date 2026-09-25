@@ -1,40 +1,249 @@
- <section class="agendamentos">
-            <header>
-                <div class="parallax-padrao">
-                    
-                    <h2>
-                        Agendamentos
-                    </h2>
-                    <h3>
-                        Entenda como agendar conosco
-                    </h3>
-                </div>
-                <div class="textao wow animate__animated animate__fadeInUp animate__delay-1s">
-                    <ol>
-                        <li>
-                            1.Baixe pela Playstore ou AppStore
-                        </li>
-                        <li>
-                            2.Clique em "iniciar novo agendamento"
-                        </li>
-                        <li>
-                            3.Coloque nosso número (+55 11 95887-1348)
-                        </li>
-                        <li>
-                            4.Pronto! agora é só agendar em Jho's Barbershop.
-                        </li>
+<section class="depoimentos">
+    <header class="parallax-padrao">
+        <h2>
+            Depoimentos
+        </h2>
+        <h3>
+            Avaliações do nossos serviços!
+        </h3>
 
-                    </ol>
+    </header>
+    <div class="site cardDepo">
 
-                </div>
-            </header>
-            <div class="logo-top wow animate__animated animate__fadeInUp animate__delay-2s">
-                <img src="{{ asset ('jho_barber/assets/logo_topsalao.png')}}" alt="Logo do aplicativo Top Salão">
+        <article>
+
+            <ul>
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+            </ul>
+
+            <img src="{{ asset('jho_barber/assets/cliente_foto2.png')}}" alt="foto do usuario">
+
+            <p>
+                Excelente profissional com diversas opções de serviço, ambiente agradável e confortável. Super
+                recomendo!!!!!!
+            </p>
+
+            <h4>
+                Rudy Alessandro
+            </h4>
+
+            <div class="registroDepo">
+
+
+                <h5>
+                    Corte de cabelo, Aparar a barba
+                </h5>
+
             </div>
 
-            <div class="link-app wow animate__animated animate__fadeInUp animate__delay-2s">
-                <a href="https://share.google/IZiwIKeRguvVByaLO" target="_blank">Baixe aqui</a>
+        </article>
+
+        <article>
+
+            <ul>
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+            </ul>
+
+            <img src="{{ asset('jho_barber/assets/cliente_foto3.png')}}" alt="foto do usuario">
+
+            <p>
+                Melhor salão da região, menos de 5 estrelas é inveja!
+
+            <h4>
+                Wil V
+            </h4>
+
+            <div class="registroDepo">
+
+
+                <h5>
+                    Corte de cabelo, Aparar a barba, Depilação de sobrancelha
+                </h5>
+
             </div>
 
+        </article>
 
-        </section>
+        <article>
+
+            <ul>
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+            </ul>
+
+            <img src="{{ asset('jho_barber/assets/cliente_foto4.png')}}" alt="foto do usuario">
+
+            <p>
+                Corto a mais de 2 anos e super recomendo !!
+                Ambiente legal, limpo e organizado.
+                Indico a todos a dar uma passada lá pra cuidar do visual.
+            </p>
+
+            <h4>
+                Elivelton Souza Barbosa
+            </h4>
+
+            <div class="registroDepo">
+
+
+            </div>
+
+        </article>
+
+        <article>
+
+            <ul>
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+            </ul>
+
+            <img src="{{ asset('jho_barber/assets/cliente_foto5.png')}}" alt="foto do usuario">
+
+            <p>
+                Atendimento muito bom e satisfatório
+            </p>
+
+            <h4>
+                Caique Santos
+            </h4>
+
+            <div class="registroDepo">
+
+
+                <h5>
+                    Corte de cabelo, Depilação de sobrancelha
+                </h5>
+
+            </div>
+
+        </article>
+
+        <article>
+
+            <ul>
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+
+                <li>
+                    <img src="{{ asset('jho_barber/assets/estrela_avaliacao.png')}}" alt="estrela para avaliar">
+                </li>
+            </ul>
+
+            <img src="{{ asset('jho_barber/assets/cliente_foto1.png')}}" alt="foto do usuario">
+
+            <p>
+                Excelente profissional . O melhor cabeleireiro da região , super indico . Meu filho não troca ele por
+                nenhum outro.
+            </p>
+
+            <h4>
+                Sabrina Almeida
+            </h4>
+
+            <div class="registroDepo">
+
+
+                <h5>
+                    Corte de cabelo
+                </h5>
+
+            </div>
+
+        </article>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+</section>

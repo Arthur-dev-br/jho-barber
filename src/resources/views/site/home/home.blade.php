@@ -20,14 +20,14 @@
 
     <!-- inicio Bem vindo -->
 
-    @include('site.home.bemvindo')
+    @include('site.home.sobre')
 
     <!-- fim bem vindo -->
 
 
     <!-- Destaque-inicio -->
 
-    @include('site.home.destaque')
+    @include('site.home.servicos')
 
     <!-- destaque fim -->
 
@@ -38,14 +38,15 @@
      
     <!-- Inicio equipe -->
 
-    @include('site.home.equipe')
+    @include('site.home.agendamento
+    ')
 
 
     <!-- equipe fim -->
     
     <!-- Eventos inicio -->
 
-    @include('site.home.evento')
+    @include('site.home.equipe')
 
     <!-- eventos fim -->
 

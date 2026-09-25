@@ -30,7 +30,7 @@
           <ul>
             @for($i = 1; $i <= 5; $i++)
              <li class = "{{$i <= $estrela ? 'estrela-ativa' : 'estrela-inativa' }}">
-              <img src="{{ asset ('jho_barber/assets/estrela.png') }}" alt="{{$i <= $estrela ? 'Estrela preenchida' : 'Estrela não preenchida'}}">
+              <img src="{{ asset ('jho_barber/assets/estrela_avaliacao.png') }}" alt="{{$i <= $estrela ? 'Estrela preenchida' : 'Estrela não preenchida'}}">
             </li>
             @endfor
 
@@ -38,7 +38,7 @@
           </ul>
    
              
-             <img src="{{ asset ('jho_barber/assets/'. $cliente->foto_cliente) }}" alt="{{ $cliente->nome_cliente }}">
+             <img src="{{ asset ('jho_barber/assets/cliente/'. $cliente->foto_cliente) }}" alt="{{ $cliente->nome_cliente }}">
    
              <p>
                {{$linha->descricao_depoimento}}
@@ -57,7 +57,7 @@
                  </h5>
  
                  <h5>
-                   Espresso artesanal
+                  
                  </h5>
 
                </div>
