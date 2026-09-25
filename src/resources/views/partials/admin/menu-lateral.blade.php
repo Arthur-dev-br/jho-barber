@@ -93,19 +93,8 @@
                   <p>Depoimentos</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{route('admin.linhatempo.index')}}" class="nav-link">
-                  <i class="nav-icon bi bi-circle-fill"></i>
-                  <p>Linha do tempo</p>
-                </a>
-              </li>
+              
 
-              <li class="nav-item">
-                <a href="{{route('admin.newsletter.index')}}" class="nav-link">
-                  <i class="nav-icon bi bi-circle-fill"></i>
-                  <p>Newsletter</p>
-                </a>
-              </li>
 
                <li class="nav-item">
                 <a href="{{route('admin.servicos.index')}}" class="nav-link">
