@@ -159,6 +159,7 @@ p {
     opacity: 0;
 }
 
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -223,6 +224,77 @@ p {
     display: flex;
 }
 
+/* ========================================
+   MENU DE CATEGORIAS DO CARDÁPIO
+======================================== */
+
+
+.produto .menu-categorias {
+    width: 100%;
+    margin-top: 35px;
+    z-index: 1;
+}
+
+.produto .menu-categorias ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    gap: 12px;
+    
+    margin: 0;
+    padding: 0;
+    
+    list-style: none;
+}
+
+.produto .menu-categorias li {
+    margin: 0;
+    padding: 0;
+}
+
+.produto .menu-categorias a {
+    display: block;
+    
+    padding: 10px 20px;
+    
+    border: 2px solid #ffffff;
+    border-radius: 25px;
+    
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.35);
+    
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    
+    transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.produto .menu-categorias a:hover {
+    color: #ffffff;
+    background-color: #a65d2e;
+    
+    transform: translateY(-2px);
+}
+
+.produto .menu-categorias a.categoria-ativa {
+    color: #ffffff;
+    background-color: #a65d2e;
+    border-color: #a65d2e;
+}
+
+.img-produto{
+    border-radius: 15px;
+}
+
+
+
 /* Banner */
 
 .banner img {
@@ -234,7 +306,7 @@ p {
 .banner .slick-next:before {
     font-size: 30px;
     color: white;
-
+    
 }
 
 .banner .slick-prev {
@@ -311,7 +383,6 @@ p {
 
 
 .servicos {
-    margin-top: 50px;
     max-width: 1920px;
     width: 100%;
     margin-bottom: 75px;
@@ -886,7 +957,7 @@ p {
 .flip2 {
     position: absolute;
     inset: 0;
-    border-radius: 25px;
+    border-radius: 20px;
     overflow: hidden;
     backface-visibility: hidden;
     display: flex;
@@ -899,7 +970,6 @@ p {
     color: var(--cor-primaria-2);
 
     position: relative;
-    z-index: 1;
     padding: 0 15px 0 15px;
 }
 
@@ -924,314 +994,13 @@ p {
     padding: 22px;
 }
 
-.flip1serv2 {
-    background-image: url(../assets/Corte_Barba.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
 
-.flip1serv3 {
-    background-image: url(../assets/foto_galeria14.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
-
-.flip1serv4 {
-    background-image: url(../assets/foto_galeria13.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
-
-.flip1serv5 {
-    background-image: url(../assets/foto_galeria12.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
-
-.flip1serv6 {
-    background-image: url(../assets/foto_galeria11.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
-
-.flip1serv7 {
-    background-image: url(../assets/foto_galeria20.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
-
-.flip1serv8 {
-    background-image: url(../assets/foto_galeria19.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
-
-.flip1serv9 {
-    background-image: url(../assets/foto_galeria14.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
-
-.flip1serv10 {
-    background-image: url(../assets/foto_galeria18.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
-
-.flip1serv11 {
-    background-image: url(../assets/foto_galeria16.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
-
-.flip1serv12 {
-    background-image: url(../assets/foto_galeria15.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
-
-.flip1serv13 {
-    background-image: url(../assets/foto_galeria17.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
-
-.flip1serv14 {
-    background-image: url(../assets/foto_galeria7.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
-
-.flip1serv15 {
-    background-image: url(../assets/foto_galeria4.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
-
-.flip1serv16 {
-    background-image: url(../assets/foto_galeria3.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
-
-.flip1serv17 {
-    background-image: url(../assets/foto_galeria10.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
-
-.flip1serv18 {
-    background-image: url(../assets/foto_galeria2.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
-
-.flip1serv19 {
-    background-image: url(../assets/foto_galeria9.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
-
-.flip1serv20 {
-    background-image: url(../assets/foto_galeria4.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
-
-.flip1serv21 {
-    background-image: url(../assets/foto_galeria6.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
-
-.flip1serv22 {
-    background-image: url(../assets/foto_galeria21.png);
-    background-size: cover;
-    background-position: center;
-    align-items: center;
-    position: absolute;
-    inset: 0;
-    border-radius: 25px;
-    overflow: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    padding: 22px;
-}
-
-.flip1serv h4,
-.flip1serv2 h4,
-.flip1serv3 h4,
-.flip1serv4 h4,
-.flip1serv5 h4,
-.flip1serv6 h4,
-.flip1serv7 h4,
-.flip1serv8 h4 {
+.flip1serv h4{
     font-size: 30px;
     font-family: var(--fonte-titulo);
     color: var(--cor-primaria-2);
 
     position: relative;
-    z-index: 1;
     padding: 0 15px 0 15px;
     -webkit-text-stroke: 0.5px black;
 }
