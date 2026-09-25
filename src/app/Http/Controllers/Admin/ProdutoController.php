@@ -10,9 +10,11 @@ use Illuminate\Http\Request;
 class ProdutoController extends Controller
 {
     // Listar todos os produtos cadastrados
-    public function index()
+   public function index()
     {
-        $listaProduto = Produto::orderByDesc('id_produto')->get();
+        $listaProduto = Produto::with('categoria')
+            ->orderByDesc('id_produto')
+            ->get();
 
         return view('admin.produto.index', compact('listaProduto'));
     }

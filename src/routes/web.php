@@ -11,10 +11,9 @@ use App\Http\Controllers\Site\ServicosController;
 use App\Http\Controllers\Admin\AdminController;
 
 
-use App\Http\Controllers\Admin\AdminProdutoController as AdminAdminProdutoController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\CategoriaController;
-use App\Http\Controllers\Admin\ClienteController;
+use App\Http\Controllers\Admin\ClienteController as AdminClienteController;
 use App\Http\Controllers\Admin\ProdutoController as AdminProdutoController;
 use App\Http\Controllers\Admin\DepoimentoController;
 use App\Http\Controllers\Admin\GaleriaController as AdminGaleriaController;
@@ -71,7 +70,7 @@ Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard
     Route::get('admin/cliente', [AdminClienteController::class, 'index'])->name('admin.cliente.index');
 
     // Cadastrar cliente
-    Route::post('/cliente', [ClienteController::class, 'store'])
+    Route::post('/cliente', [AdminClienteController::class, 'store'])
             ->name('admin.cliente.store');
 
     // Editar cliente
@@ -79,7 +78,7 @@ Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard
     //     ->name('admin.cliente.edit');
 
     // Atualizar cliente
-    Route::put('/cliente/{id}', [ClienteController::class, 'update'])
+    Route::put('/cliente/{id}', [AdminClienteController::class, 'update'])
             ->name('admin.cliente.update');
 
     // Ativar / desativar cliente
@@ -97,7 +96,7 @@ Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard
 
 Route::get('/admin/categoria',[CategoriaController::class, 'index'])->name('admin.categoria.index');
 
-Route::get('/admin/cliente',[ClienteController::class, 'index'])->name('admin.cliente.index');
+Route::get('/admin/cliente',[AdminClienteController::class, 'index'])->name('admin.cliente.index');
 
 Route::get('/admin/depoimento',[DepoimentoController::class, 'index'])->name('admin.depoimento.index');
 
