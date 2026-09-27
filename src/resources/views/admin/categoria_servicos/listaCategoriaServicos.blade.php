@@ -6,13 +6,13 @@
             <!--begin::Row-->
             <div class="row">
               <div class="col-sm-6">
-                <h1 class="mb-0 fs-3">Serviços</h1>
+                <h1 class="mb-0 fs-3">Categoria Servicos</h1>
               </div>
               <div class="col-sm-6">
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb float-sm-end">
                     <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Serviços</li>
+                    <li class="breadcrumb-item active" aria-current="page">Categoria</li>
                   </ol>
                 </nav>
               </div>
@@ -53,7 +53,7 @@
                           </select>
                           <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal-add-user">
                             <i class="bi bi-person-plus-fill me-1" aria-hidden="true"> </i>
-                            Novo Serviço
+                            New user
                           </button>
                         </div>
                       </div>
@@ -67,90 +67,37 @@
                         <thead>
                           <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Categoria</th>
-                            <th scope="col">Descrição</th>
-                            <th scope="col">Valor</th>
-                            <th scope="col">Imagem</th>
+                            <th scope="col">Titulo</th>
                             <th scope="col">Status</th>
                           </tr>
                         </thead>
                         <tbody>
-                        @forelse($listaServicos as $servicos)
+                        @forelse($listaCategoriaServicos as $categoria_serv)
                           <tr>
-
-                            {{--ID--}}
-                            <td>
-                              {{$servicos->id_servicos}}
-                            </td>
                             
-                            {{--Nome--}}
                             <td>
-                              @if($servicos->nome_servicos)
+                              {{$categoria_serv->id_categoria_servicos}}
+                            </td>
+
+                              
+                            </td>
+                            <td>
+                              @if($categoria_serv->nome_categoria_servicos)
                               <span>
-                                {{$servicos->nome_servicos}}
+                                {{$categoria_serv->nome_categoria_servicos}}
                               </span>
                              
                                 @else
                                     <span class="text-muted">
-                                        Sem serviço
+                                        Sem categoria
                                     </span>
 
                              @endif
                             </td>
 
-                            {{-- Categoria --}}
-
-                             <td>
-                        @if($servicos->id_categoria_servicos)
-                        <span>
-                           {{ $servicos->categoria_servicos->nome_categoria_servicos }}
-                        </span>
-
-                        @else
-                        <span class="text-muted">
-                          Sem categoria
-                        </span>
-
-                        @endif
-                      </td>
-
-                            {{--Descrição--}}
-                            <td>
-                              <span>
-                               <p style="white-space: pre-line;">{{ $servicos->descricao_servicos}}</p>
-                              </span>
-                            </td>
-
-                             {{--Valor--}}
-                              <td>
-                              <span  class="badge text-bg-success">                         
-                              R$ {{ number_format($servicos->valor_servicos, 2, ',', '.') }}
-                              </span>
-                            </td>
-
-                            {{--Imagem--}}
-                            <td>
-                             @if($servicos->imagem_servicos)
-                             <img 
-                                src="{{ asset('jho_barber/assets/' . $servicos->imagem_servicos) }}" 
-                                alt="{{ $servicos->nome_servicos}}"
-                                class="rounded"
-                                style="
-                                  width: 100px;
-                                  height: 60px;
-                                  object-fit: cover;
-                                "
-                                >
-                             @else
-                                <span class="text-muted">
-                                    Sem imagem
-                                </span>
-                             @endif
-
                            {{--Status--}}
                             <td>
-                                @if( $servicos->status_servicos === 'ATIVO')
+                                @if( $categoria_serv->status_categoria_servicos === 'ATIVO')
                               <span class="badge text-bg-success">
                                 Ativo
                               </span>
@@ -191,7 +138,7 @@
                   <!--begin::Card Footer-->
                   <div class="card-footer clearfix">
                     <div class="float-start pt-1 fs-7 text-body-secondary">
-                     Total de serviços: {{$listaServicos->count()}}
+                     Total de categorias:{{$listaCategoriaServicos->count()}}
                     </div>
                     
                   </div>
@@ -209,18 +156,18 @@
                 <div class="modal-content">
                   <form>
                     <div class="modal-header">
-                      <h5 class="modal-title" id="modal-add-user-label">Novo Serviço</h5>
+                      <h5 class="modal-title" id="modal-add-user-label">Add new user</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                       <div class="mb-3">
-                        <label for="new-user-name" class="form-label"> Nome do serviço <span class="required-indicator sr-only"> (required)</span></label>
+                        <label for="new-user-name" class="form-label"> Full name <span class="required-indicator sr-only"> (required)</span></label>
                         <input type="text" class="form-control" id="new-user-name" placeholder="e.g. Jane Doe" required="">
                       </div>
                       <div class="mb-3">
-                        <label for="new-user-email" class="form-label"> Descrição <span class="required-indicator sr-only"> (required)</span></label>
+                        <label for="new-user-email" class="form-label"> Email address <span class="required-indicator sr-only"> (required)</span></label>
                         <input type="email" class="form-control" id="new-user-email" placeholder="name@example.com" required="">
-                        <div class="form-text">Faça uma descrição para o serviço</div>
+                        <div class="form-text">The invitation will be sent to this address.</div>
                       </div>
                       <div class="mb-3">
                         <label for="new-user-role" class="form-label"> Role </label>

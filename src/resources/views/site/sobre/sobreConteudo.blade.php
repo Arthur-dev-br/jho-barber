@@ -53,20 +53,20 @@
         <h2 class="wow animate__animated animate__fadeInUp">
           Nossos Valores
         </h2>
-        <p class=" wow animate__animated animate__fadeInDown animate__delay-1s">
+        <p class=" wow animate__animated animate__fadeInDown">
           Qualidade: Compromisso com excelência em cada atendimento.
         </p>
 
-        <p class=" wow animate__animated animate__fadeInDown animate__delay-2s">
+        <p class=" wow animate__animated animate__fadeInDown">
           Respeito ao cliente: Cada cliente é único e merece atenção personalizada.
         </p>
-        <p class=" wow animate__animated animate__fadeInDown animate__delay-3s">
+        <p class=" wow animate__animated animate__fadeInDown">
           Profissionalismo: Pontualidade, organização e dedicação em todos os serviços.
         </p>
-        <p class=" wow animate__animated animate__fadeInDown animate__delay-4s">
+        <p class=" wow animate__animated animate__fadeInDown">
           Atualização constante: Busca contínua por novas técnicas, tendências e aperfeiçoamento profissional.
         </p>
-        <p class=" wow animate__animated animate__fadeInDown animate__delay-5s">
+        <p class=" wow animate__animated animate__fadeInDown">
           Experiência do cliente: Proporcionar um ambiente agradável e um atendimento que vá além do esperado.
         </p>
         <h2 class="wow animate__animated animate__fadeInUp">Jho’s Barbershop - Seu visual nas mãos de quem leva a barbearia a sério</h2>

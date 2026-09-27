@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Models;
+use App\Models\CategoriaServicos;
+
 
 use Illuminate\Database\Eloquent\Model;
+
 
 Class Servicos extends Model{
 
@@ -19,4 +22,8 @@ Class Servicos extends Model{
         'imagem_servicos',
         'status_servicos'
     ];
+
+     public function categoria_servicos(){
+        return $this->belongsTo(CategoriaServicos::class, 'id_categoria_servicos', 'id_categoria_servicos');
+    }
 }

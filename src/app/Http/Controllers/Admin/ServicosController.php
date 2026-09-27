@@ -10,7 +10,11 @@ class ServicosController extends Controller
    
     public function index()
     {
-        $listaServicos =Servicos::orderByDesc('id_servicos')->get();
+        
+        $listaServicos = Servicos::with('categoria_servicos')
+            ->orderByDesc('id_servicos')
+            ->get();
+
 
         return view('admin.servicos.index', compact('listaServicos'));
     }

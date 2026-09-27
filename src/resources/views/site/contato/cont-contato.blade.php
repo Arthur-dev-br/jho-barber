@@ -27,8 +27,6 @@
 
                      <div class="campos-dupla">
                         <div class="linha-dupla linha-topo wow animate__animated animate__fadeInUp">
-
-                            
                             <div>
                                 <input type="text" name="nome" placeholder="Nome Completo*: " maxlength="50" required
                                 value="{{ old('nome') }}">
@@ -39,11 +37,12 @@
                             </div>
                         </div>
                         <div class="linha-dupla linha-baixo wow animate__animated animate__fadeInUp">
-                            <div>
+                            
                                 <div>
                                     <input type="tel" name="fone" placeholder="Telefone: " maxlength="14"
                                     value="{{ old('fone') }}">
                                 </div>
+                                
                                 <div>
                                     <select name="assunto" required>
                                         <option value="" disabled @selected(!old('assunto')) hidden>Selecione o assunto</option>
@@ -52,7 +51,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                            </div>
+                            
                         </div>
                     </div>
 

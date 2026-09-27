@@ -100,17 +100,18 @@
                 </a>
               </li>
 
-              <li class="nav-item">
-                <a href="{{route('admin.newsletter.index')}}" class="nav-link">
-                  <i class="nav-icon bi bi-circle-fill"></i>
-                  <p>Newsletter</p>
-                </a>
-              </li>
 
                <li class="nav-item">
                 <a href="{{route('admin.servicos.index')}}" class="nav-link">
                   <i class="nav-icon bi bi-circle-fill"></i>
                   <p>Serviços</p>
+                </a>
+              </li>
+
+                <li class="nav-item">
+                <a href="{{route('admin.categoria_servicos.index')}}" class="nav-link">
+                  <i class="nav-icon bi bi-circle-fill"></i>
+                  <p>Categorias Serviços</p>
                 </a>
               </li>
 

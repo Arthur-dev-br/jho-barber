@@ -2,6 +2,6 @@
 
 @section ('content')
 
-   @include('site.sobre.sobre')
+   @include('site.sobre.sobreConteudo')
 
 @endsection
