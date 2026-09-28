@@ -140,6 +140,8 @@ class BannerController extends Controller
     public function update(Request $request, int $id)
     {
 
+       
+
         // 1 - Validar os dados --
         $dados = $request->validate([
             'titulo_banner' => 'required|max:50',
@@ -214,8 +216,9 @@ class BannerController extends Controller
                 ->route('admin.banner.index')
                 ->with('sucesso', 'Banner: ' . $banner->titulo_banner . ' foi atualizado com sucesso!');
         } catch (\Throwable $erro) {
-
+           
             report($erro);
+            
 
             return redirect()
                 ->back()

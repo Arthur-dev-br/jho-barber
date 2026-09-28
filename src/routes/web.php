@@ -78,9 +78,9 @@ Route::middleware('auth')->group(function () {
 
         // CRUD GALERIA
         Route::get('/galeria', [AdminGaleriaController::class, 'index'])->name('admin.galeria.index');
-        Route::post('/galeria', [GaleriaController::class, 'store'])->name('admin.galeria.store');
-        Route::put('/galeria/{id}', [GaleriaController::class, 'update'])->name('admin.galeria.update');
-        Route::patch('/galeria/{id}', [GaleriaController::class, 'status'])->name('admin.galeria.status');
+        Route::post('/galeria', [AdminGaleriaController::class, 'store'])->name('admin.galeria.store');
+        Route::put('/galeria/{id}', [AdminGaleriaController::class, 'update'])->name('admin.galeria.update');
+        Route::patch('/galeria/{id}', [AdminGaleriaController::class, 'status'])->name('admin.galeria.status');
 
         // CRUD PRODUTO
         Route::get('/produto', [AdminProdutoController::class, 'index'])->name('admin.produto.index');
