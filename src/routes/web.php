@@ -72,7 +72,7 @@ Route::middleware('auth')->group(function () {
         // CRUD BANNER
         Route::get('/banner', [BannerController::class, 'index'])->name('admin.banner.index');
         Route::post('/banner', [BannerController::class, 'store'])->name('admin.banner.store');
-        Route::get('/banner/{id}/editar', [BannerController::class, 'edit'])->name('admin.banner.edit');
+      //  Route::get('/banner/{id}/editar', [BannerController::class, 'edit'])->name('admin.banner.edit');
         Route::put('/banner/{id}', [BannerController::class, 'update'])->name('admin.banner.update');
         Route::patch('/banner/{id}/status', [BannerController::class, 'status'])->name('admin.banner.status');
 
