@@ -18,7 +18,7 @@
             <article class="card-flip-miolo">
 
                 <div class="flip1">
-                    <img src="{{ asset ('jho_barber/assets/pomada_premium.png')}}" alt="imagem de um kit de produtos para cabelo">
+                    <img src="{{ asset ('jho_barber/assets/produto/pomada_premium.png')}}" alt="imagem de um kit de produtos para cabelo">
                     <h4>
                         pomada extra forte “fox for men”
                     </h4>
@@ -48,7 +48,7 @@
             <article class="card-flip-miolo">
 
                 <div class="flip1">
-                    <img src="{{ asset ('jho_barber/assets/pomada_matte.png')}}" alt="imagem de um kit de produtos para cabelo">
+                    <img src="{{ asset ('jho_barber/assets/produto/pomada_matte.png')}}" alt="imagem de um kit de produtos para cabelo">
                     <h4>
                         pomada matte “fox for men”
                     </h4>
@@ -78,7 +78,7 @@
             <article class="card-flip-miolo">
 
                 <div class="flip1">
-                    <img src="{{ asset ('jho_barber/assets/pomada_teia.png')}}" alt="imagem de um kit de produtos para cabelo">
+                    <img src="{{ asset ('jho_barber/assets/produto/pomada_teia.png')}}" alt="imagem de um kit de produtos para cabelo">
                     <h4>
                         pomada teia “fox for men”
                     </h4>
@@ -110,6 +110,6 @@
     </div>
 
     <div class="mais wow animate__animated animate__fadeInUp">
-        <a href="produtos.php"> Veja Mais</a>
+        <a href="{{ route('produto') }}"> Veja Mais</a>
     </div>
 </section>

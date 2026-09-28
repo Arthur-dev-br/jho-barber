@@ -45,7 +45,7 @@
     
     <!-- Eventos inicio -->
 
-    @include('site.home.equipe')
+    @include('site.home.depoimento')
 
     <!-- eventos fim -->
 

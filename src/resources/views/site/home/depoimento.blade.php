@@ -4,9 +4,13 @@
             Depoimentos
           </h2>
 
+          <h3>
+            Avaliações do nossos serviços!
+          </h3>
+
         </header>
         
-    <div class="site cardDepoimentos wow animate__animated animate__fadeInUp">
+    <div class="site cardDepo">
           
         @ForElse ($listaDepo as $linha)
 
@@ -25,17 +29,20 @@
             
       @endphp
          
-         <article>
+         <article class="itensDepo">
 
-          <ul>
-            @for($i = 1; $i <= 5; $i++)
-             <li class = "{{$i <= $estrela ? 'estrela-ativa' : 'estrela-inativa' }}">
-              <img src="{{ asset ('jho_barber/assets/estrela_avaliacao.png') }}" alt="{{$i <= $estrela ? 'Estrela preenchida' : 'Estrela não preenchida'}}">
-            </li>
-            @endfor
+         <div class="estrela">
+           <ul>
+             @for($i = 1; $i <= 5; $i++)
+              <li class = "{{$i <= $estrela ? 'estrela-ativa' : 'estrela-inativa' }}">
+               <img src="{{ asset ('jho_barber/assets/estrela_avaliacao.png') }}" alt="{{$i <= $estrela ? 'Estrela preenchida' : 'Estrela não preenchida'}}">
+             </li>
+             @endfor
+  
+  
+           </ul>
+         </div>
 
-
-          </ul>
    
              
              <img src="{{ asset ('jho_barber/assets/cliente/'. $cliente->foto_cliente) }}" alt="{{ $cliente->nome_cliente }}">
@@ -52,7 +59,7 @@
                <div class="registroDepo">
                 
                  
-                 <h5>
+                 <h5 class="textin-data">
                    Data {{ $linha->data_criacao_depoimento ? $linha->data_criacao_depoimento->format('d/m/Y') : 'data não informada'}}
                  </h5>
  
@@ -77,4 +84,6 @@
 
 
 
-      </section>
+</section>
+
+

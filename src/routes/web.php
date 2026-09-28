@@ -57,13 +57,24 @@ Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard
     Route::get('/banner', [BannerController::class, 'index'])->name('admin.banner.index'); //Lista Banner
     Route::post('/banner', [BannerController::class, 'store'])->name('admin.banner.store');// Cadastrar Banner
     Route::get('/banner/{id}/editar', [BannerController::class, 'edit'])->name('admin.banner.edit');//Abrir o form de Editar banner
+    
     //Quer que você mude tudo, senão dará erro
     Route::put('/banner/{id}', [BannerController::class, 'update'])->name('admin.banner.update');//Atualizar Banner
     //Permite você mudar só um valor
     Route::patch('/banner/{id}/status', [BannerController::class, 'status'])->name('admin.banner.status');//Ativar o Desativar Banner
  
-    // CRUD GALERIA
-   Route::get('admin/galeria', [AdminGaleriaController::class, 'index'])->name('admin.galeria.index'); //Lista Galeria
+        // CRUD GALERIA
+        Route::get('admin/galeria', [AdminGaleriaController::class, 'index'])->name('admin.galeria.index'); //Lista Galeria
+
+   
+        // Cadastrar imagem na galeria
+        Route::post('/galeria', [GaleriaController::class, 'store'])->name('admin.galeria.store');
+
+        // Atualizar imagem da galeria
+        Route::put('/galeria/{id}', [GaleriaController::class, 'update'])->name('admin.galeria.update');
+
+        // Ativar / desativar imagem da galeria
+        Route::patch('/galeria/{id}', [GaleriaController::class, 'status'])->name('admin.galeria.status');
 
     // CRUD PRODUTO
     Route::get('admin/produto', [AdminProdutoController::class, 'index'])->name('admin.produto.index');//Lista Produto

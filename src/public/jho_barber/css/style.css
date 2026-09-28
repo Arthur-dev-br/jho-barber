@@ -1214,6 +1214,32 @@ color: #171717;
     width: 100%;
 }
 
+.itensDepo .estrela {
+  padding: 50px 0;
+}
+
+.itensDepo .estrela ul {
+  display: flex;
+  justify-content: center;
+}
+
+.itensDepo .estrela ul li {
+  margin: 0 5px;
+}
+
+.itensDepo .estrela ul li img {
+  margin: 0 5px;
+  width: 50px;
+}
+
+.estrela-ativa{
+  opacity: 1;
+}
+
+.estrela-inativa{
+  opacity: 0.3;
+}
+
 .cardDepo article ul {
     display: flex;
     justify-content: center;
@@ -1249,7 +1275,7 @@ color: #171717;
     font-size: 25px;
 }
 
-.depoimentos .cardDepo .registroDepo h5 {
+.depoimentos .cardDepo .registroDepo .textin-data {
     width: 100%;
     text-align: center;
     margin-top: 10px;
