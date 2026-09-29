@@ -153,46 +153,39 @@
                                                             data-titulo="{{ $banner->titulo_banner }}"
                                                             data-status="{{ $banner->status_banner }}"
                                                             data-image ="{{ asset('jho_barber/assets/' . $banner->imagem_banner) }}"
-                                                            data-url="{{ route('admin.banner.status', $banner->id_banner) }}"
+                                                            data-url="{{ route('admin.banner.update', $banner->id_banner) }}"
                                                             aria-label="Editar">
 
                                                             <i class="bi bi-pencil" aria-hidden="true"> </i>
                                                         </button>
 
                                                         {{-- INICIO ATIVAR / DESATIVAR --}}
-                                                        <form
-                                                            action="{{ route('admin.banner.status', $banner->id_banner) }}"
-                                                            method="POST" class="d-inline">
+                                                        
 
                                                             @csrf
                                                             @method('PATCH')
 
-                                                            @if ($banner->status_banner === 'ATIVO')
-                                                                <button type="submit" class="btn btn-outline-danger"
-                                                                    data-bs-toggle="modal"
-                                                                    data-bs-target="#modal-status-banner"
-                                                                    title="Desativar banner"
-                                                                    data-url="{{ route('admin.banner.status', $banner->id_banner) }}"
-                                                                    data-titulo="{{ $banner->titulo_banner }}"
-                                                                    data-status="ATIVO" aria-label="Deletar">
+                                                          @if ($banner->status_banner === 'ATIVO')
+                                                        <button type="button" class="btn btn-outline-danger"
+                                                            data-bs-toggle="modal" data-bs-target="#modal-status-banner"
+                                                            title="Desativar banner"
+                                                            data-url="{{ route('admin.banner.status', $banner->id_banner) }}"
+                                                            data-titulo="{{ $banner->titulo_banner }}"
+                                                            data-status="ATIVO" aria-label="Desativar">
+                                                            <i class="bi bi-eye-fill" aria-hidden="true"></i>
+                                                        </button>
+                                                        @else
+                                                        <button type="button" class="btn btn-outline-success"
+                                                            data-bs-toggle="modal" data-bs-target="#modal-status-banner"
+                                                            title="Ativar banner"
+                                                            data-url="{{ route('admin.banner.status', $banner->id_banner) }}"
+                                                            data-titulo="{{ $banner->titulo_banner }}"
+                                                            data-status="INATIVO" aria-label="Ativar">
+                                                            <i class="bi bi-eye-slash" aria-hidden="true"></i>
+                                                        </button>
+                                                        @endif
 
-                                                                    <i class="bi bi-eye-fill" aria-hidden="true"> </i>
-                                                                </button>
-                                                            @else
-                                                                <button type="submit" class="btn btn-outline-success"
-                                                                    data-bs-toggle="modal"
-                                                                    data-bs-target="#modal-status-banner"
-                                                                    title="Desativar banner"
-                                                                    data-url="{{ route('admin.banner.status', $banner->id_banner) }}"
-                                                                    data-titulo="{{ $banner->titulo_banner }}"
-                                                                    data-status="INATIVO" aria-label="Deletar">
-
-                                                                    <i class="bi bi-eye-slash" aria-hidden="true">
-                                                                    </i>
-                                                                </button>
-                                                            @endif
-
-                                                        </form>
+                                                        
 
 
 
@@ -300,7 +293,7 @@
                     </div>
                 </div>
             </div>
-            {{-- FIM - MODAL CADASTRO BANNER  --}}
+            {{-- FIM - MODAL CADASTRO BANNER  --}}  
 
 
 
@@ -399,7 +392,7 @@
                                     Cancelar
                                 </button>
 
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                                <button type="submit" class="btn btn-danger" id="btn-status-banner"
                                     id="btn-status-banner">
                                     Confirmar
                                 </button>
