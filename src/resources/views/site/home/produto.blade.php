@@ -13,95 +13,101 @@
     <div class="site card-produtos">
 
     
+          
+             <div class="card-flip wow animate__animated animate__fadeInUp animate__delay-1s">
+                
 
-        <div class="card-flip wow animate__animated animate__fadeInUp animate__delay-1s">
-            <article class="card-flip-miolo">
+                    <article class="card-flip-miolo">
+        
+                        <div class="flip1">
+                            <img src="{{ asset ('jho_barber/assets/produto/pomada_premium.png')}}" alt="imagem de um kit de produtos para cabelo">
+                            <h4>
+                                pomada extra forte “fox for men”
+                            </h4>
+                        </div>
+        
+                        <div class="flip2">
+        
+                            <h4>
+                                pomada extra forte “fox for men”
+                            </h4>
+        
+                            <h4>
+                                R$ 80,00
+                            </h4>
+                            
+                            <p>
+                                Pomadas para cabelo
+                            </p>
+        
+                        </div>
+                    </article>
+              
+        
+            </div>
 
-                <div class="flip1">
-                    <img src="{{ asset ('jho_barber/assets/produto/pomada_premium.png')}}" alt="imagem de um kit de produtos para cabelo">
-                    <h4>
-                        pomada extra forte “fox for men”
-                    </h4>
+
+
+                <div class="card-flip wow animate__animated animate__fadeInUp animate__delay-1s">
+                    <article class="card-flip-miolo">
+        
+                        <div class="flip1">
+                            <img src="{{ asset ('jho_barber/assets/produto/pomada_matte.png')}}" alt="imagem de um kit de produtos para cabelo">
+                            <h4>
+                                pomada matte “fox for men”
+                            </h4>
+                        </div>
+        
+                        <div class="flip2">
+                            <h4>
+                                pomada matte “fox for men”
+                            </h4>
+        
+                            <h4>
+                                R$ 35,00
+                            </h4>
+                            
+                            <p>
+                                cera modeladora efeito matte
+                            </p>
+        
+                        </div>
+                    </article>
+        
+        
                 </div>
-
-                <div class="flip2">
-
-                    <h4>
-                        pomada extra forte “fox for men”
-                    </h4>
-
-                    <h4>
-                        R$ 80,00
-                    </h4>
-                    
-                    <p>
-                        Pomadas para cabelo
-                    </p>
-
+        
+        
+                <div class="card-flip wow animate__animated animate__fadeInUp animate__delay-1s">
+                    <article class="card-flip-miolo">
+        
+                        <div class="flip1">
+                            <img src="{{ asset ('jho_barber/assets/produto/pomada_teia.png')}}" alt="imagem de um kit de produtos para cabelo">
+                            <h4>
+                                pomada teia “fox for men”
+                            </h4>
+                        </div>
+        
+                        <div class="flip2">
+                            <h4>
+                                pomada teia “fox for men”
+                            </h4>
+        
+                            <h4>
+                                R$ 40,00
+                            </h4>
+                            
+                            <p>
+                                creme modelador efeito teia
+                            </p>
+        
+                        </div>
+                    </article>
+        
+        
                 </div>
-            </article>
-
-
-        </div>
-
-        <div class="card-flip wow animate__animated animate__fadeInUp animate__delay-1s">
-            <article class="card-flip-miolo">
-
-                <div class="flip1">
-                    <img src="{{ asset ('jho_barber/assets/produto/pomada_matte.png')}}" alt="imagem de um kit de produtos para cabelo">
-                    <h4>
-                        pomada matte “fox for men”
-                    </h4>
-                </div>
-
-                <div class="flip2">
-                    <h4>
-                        pomada matte “fox for men”
-                    </h4>
-
-                    <h4>
-                        R$ 35,00
-                    </h4>
-                    
-                    <p>
-                        cera modeladora efeito matte
-                    </p>
-
-                </div>
-            </article>
-
-
-        </div>
-
-
-        <div class="card-flip wow animate__animated animate__fadeInUp animate__delay-1s">
-            <article class="card-flip-miolo">
-
-                <div class="flip1">
-                    <img src="{{ asset ('jho_barber/assets/produto/pomada_teia.png')}}" alt="imagem de um kit de produtos para cabelo">
-                    <h4>
-                        pomada teia “fox for men”
-                    </h4>
-                </div>
-
-                <div class="flip2">
-                    <h4>
-                        pomada teia “fox for men”
-                    </h4>
-
-                    <h4>
-                        R$ 40,00
-                    </h4>
-                    
-                    <p>
-                        creme modelador efeito teia
-                    </p>
-
-                </div>
-            </article>
-
-
-        </div>
+        
+            
 
 
 

@@ -160,6 +160,20 @@
         gap: 30px;
         padding-right: 12px;
     }
+    
+    .topo h1 {
+        width: 180px;
+        height: 116px;
+        margin-left: 12px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left center;
+        flex-shrink: 0;
+    }
+
+    .topo .rede-social {
+        display: none !important;
+    }
 
     .menu ul {
         flex-wrap: wrap;
@@ -172,6 +186,8 @@
         margin: 0 10px;
     }
 
+    /*fim do menu */
+
     .parallax-padrao {
         width: 100%;
         max-width: 100%;
@@ -183,21 +199,27 @@
 
     }
 
-    .topo h1 {
-        width: 180px;
-        height: 116px;
-        margin-left: 12px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: left center;
-        flex-shrink: 0;
-    }
 
     .tabela-servicos {
         max-width: 100%;
         width: calc(100% - 32px);
         margin: 30px auto 0;
         box-sizing: border-box;
+    }
+
+    .slideGaleria .slick-slide {
+    padding: 0 12.5px;
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+    }
+
+    .slideGaleria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
     }
 
     .contato-form {
@@ -271,9 +293,6 @@
 
 
 
-    .topo .rede-social {
-        display: none !important;
-    }
 
 
 }
