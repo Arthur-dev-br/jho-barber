@@ -111,7 +111,7 @@
                             data-bs-toggle="modal" data-bs-target="#modal-status-galeria"
                             data-url="{{ route('admin.galeria.status', $galeria->id_galeria) }}"
                             data-nome="{{ $galeria->nome_galeria }}"
-                            data-status="{{ $galeria->status_galeria }}"> Deletar </a>
+                            data-status="{{ $galeria->status_galeria }}"> Alterar status </a>
                         </li>
                       </ul>
                     </div>
@@ -172,15 +172,15 @@
                 <div class="mb-3">
 
                   <label for="img-galeria" class="form-label"> Selecione uma imagem </label>
-                  <input type="file" class="form-control input-banner" id="img-galeria"
+                  <input type="file" class="form-control input-galeria" id="img-galeria"
                     name="imagem_galeria" accept="image/*" required />
 
-                  <label for="img-galeria" class="banner-upload">
+                  <label for="img-galeria" class="galeria-upload">
 
                     <img id="ver-galeria" src="{{ asset('admin/assets/img/sem-banner.svg') }}"
                       alt="Selecione uma imagem para a galeria">
 
-                    <div class="banner-upload">
+                    <div class="galeria-upload">
                       <i class="bi bi-image"></i>
                       <span>Clique para selecionar a imagem</span>
                     </div>
@@ -239,14 +239,14 @@
 
                   <label for="edit-galeria-imagem" class="form-label"> Selecione uma imagem </label>
 
-                  <input type="file" class="form-control input-banner" id="edit-galeria-imagem"
+                  <input type="file" class="form-control input-galeria" id="edit-galeria-imagem"
                     name="imagem_galeria" accept="image/*" />
 
-                  <label for="edit-galeria-imagem" class="banner-upload">
+                  <label for="edit-galeria-imagem" class="galeria-upload">
 
                     <img id="edit-galeria-mostrar" src="" alt="galeria">
 
-                    <div class="banner-upload">
+                    <div class="galeria-upload">
                       <i class="bi bi-image"></i>
                       <span>Deixe vazio para manter a imagem atual</span>
                     </div>
