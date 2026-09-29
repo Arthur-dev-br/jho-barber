@@ -24,6 +24,7 @@
             </ul>
 
         </nav>
+        
         <ul class="rede-social topozao">
             <li><a href="https://www.instagram.com/jhos_barbershop/" target="_blank"><img src="{{ asset('jho_barber/assets/instagram-24.png')}}" alt="Logo do instagram 60x60"></a></li>
             <li><a href="https://wa.me/5511958871348" target="_blank"><img src="{{ asset('jho_barber/assets/whatsapp-24.png')}}" alt="Logo do whatsapp 60x60"></a></li>
