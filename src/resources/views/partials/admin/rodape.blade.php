@@ -1,12 +1,12 @@
 <footer class="app-footer">
         <!--begin::To the end-->
-        <div class="float-end d-none d-sm-inline">Anything you want</div>
+        <div class="float-end d-none d-sm-inline">Todos os direitos reservados</div>
         <!--end::To the end-->
         <!--begin::Copyright-->
         <strong>
           Criado e desenvolvido por TECH TRIO STUDIO - ©2026
-          <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
+          
         </strong>
-        All rights reserved.
+        
         <!--end::Copyright-->
       </footer>

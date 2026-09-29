@@ -15,18 +15,7 @@
               </a>
             </li>
 
-            <li class="nav-item d-none d-md-block">
-              <a href="./index.html" class="nav-link">
-                <i class="bi bi-grid-1x2 me-1" aria-hidden="true"></i>
-                Live preview
-              </a>
-            </li>
-            <li class="nav-item d-none d-md-block">
-              <a href="./docs/introduction.html" class="nav-link">
-                <i class="bi bi-book me-1" aria-hidden="true"></i>
-                Documentation
-              </a>
-            </li>
+        
           </ul>
           <!--end::Start Navbar Links-->
 
@@ -53,7 +42,7 @@
                   <div class="d-flex">
                     <div class="flex-shrink-0">
                       <img
-                        src="{{ asset('admin/assets/img/user1-128x128.jpg ')}}"
+                        src="{{ asset('admin/assets/img/avatar5.png')}}"
                         alt=""
                         class="img-size-50 rounded-circle me-3"
                       />
@@ -244,7 +233,7 @@
                 <!-- Usuário no topo -->
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
 
-                    <img src="{{ asset('admin/assets/img/user2-160x160.jpg') }}"
+                    <img src="{{ asset('admin/assets/img/avatar5.png') }}"
                         class="user-image rounded-circle shadow" alt="{{ auth()->user()->nome_usuarios }}" />
 
                     <span class="d-none d-md-inline">
@@ -260,7 +249,7 @@
                     <!-- Cabeçalho do usuário -->
                     <li class="user-header text-bg-primary">
 
-                        <img src="{{ asset('admin/assets/img/user2-160x160.jpg') }}" class="rounded-circle shadow"
+                        <img src="{{ asset('admin/assets/img/avatar5.png') }}" class="rounded-circle shadow"
                             alt="{{ auth()->user()->nome_usuarios }}" />
 
                         <p>
