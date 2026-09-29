@@ -111,7 +111,7 @@
                             data-bs-toggle="modal" data-bs-target="#modal-status-galeria"
                             data-url="{{ route('admin.galeria.status', $galeria->id_galeria) }}"
                             data-nome="{{ $galeria->nome_galeria }}"
-                            data-status="{{ $galeria->status_galeria }}"> Alterar status  </a>
+                            data-status="{{ $galeria->status_galeria }}"> Deletar </a>
                         </li>
                       </ul>
                     </div>
@@ -172,15 +172,15 @@
                 <div class="mb-3">
 
                   <label for="img-galeria" class="form-label"> Selecione uma imagem </label>
-                  <input type="file" class="form-control input-galeria" id="img-galeria"
+                  <input type="file" class="form-control input-banner" id="img-galeria"
                     name="imagem_galeria" accept="image/*" required />
 
-                  <label for="img-galeria" class="galeria-upload">
+                  <label for="img-galeria" class="banner-upload">
 
                     <img id="ver-galeria" src="{{ asset('admin/assets/img/sem-banner.svg') }}"
                       alt="Selecione uma imagem para a galeria">
 
-                    <div class="galeria-upload">
+                    <div class="banner-upload">
                       <i class="bi bi-image"></i>
                       <span>Clique para selecionar a imagem</span>
                     </div>

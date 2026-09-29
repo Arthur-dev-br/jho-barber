@@ -21,7 +21,7 @@
     <h2>
       <?php $data = date('Y');
       echo $data ?>
-      -Criado e desenvolvido por TECH TRIO STUDIO -
+      -Criado e desenvolvido por Arthur Costa - Senac Smp
     </h2>
 
     </div>
