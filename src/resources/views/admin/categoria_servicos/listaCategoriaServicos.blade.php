@@ -69,6 +69,7 @@
                             <th scope="col">ID</th>
                             <th scope="col">Titulo</th>
                             <th scope="col">Status</th>
+                            <th class="text-end">Ações</th>  
                           </tr>
                         </thead>
                         <tbody>

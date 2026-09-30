@@ -33,6 +33,7 @@
                 <div class="card mb-4">
                   <!--begin::Card Header-->
                   <div class="card-header">
+                     <h3 class="card-title">Categorias cadastradas</h3>
                     <div class="row g-2 align-items-center">
                       <div class="col-12 col-md-4">
                        
@@ -43,7 +44,7 @@
                             <span class="input-group-text">
                               <i class="bi bi-search" aria-hidden="true"></i>
                             </span>
-                            <input type="search" id="user-search" class="form-control" placeholder="Search users" aria-label="Search users" style="width: 180px">
+                            <input type="search" id="user-search" class="form-control" placeholder="Pesquisar categoria" aria-label="Search users" style="width: 180px">
                           </div>
                           <select id="user-role-filter" class="form-select form-select-sm w-auto" aria-label="Filter by role">
                             <option value="all" selected="">Todos</option>
@@ -53,7 +54,7 @@
                           </select>
                           <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal-add-user">
                             <i class="bi bi-person-plus-fill me-1" aria-hidden="true"> </i>
-                            New user
+                            Nova categoria
                           </button>
                         </div>
                       </div>
@@ -69,6 +70,8 @@
                             <th scope="col">ID</th>
                             <th scope="col">Titulo</th>
                             <th scope="col">Status</th>
+                            <th class="text-end">Ações</th>
+                            
                           </tr>
                         </thead>
                         <tbody>

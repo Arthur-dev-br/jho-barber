@@ -25,99 +25,52 @@
 
           <!--begin::End Navbar Links-->
           <ul class="navbar-nav ms-auto">
-            <!--begin::Messages Dropdown Menu-->
-            <li class="nav-item dropdown">
+            <!--begin::Messages Dropdown Menu mensagens do formulário de contato do site) -->
+           <li class="nav-item dropdown">
               <a
                 class="nav-link"
                 data-bs-toggle="dropdown"
                 href="#"
-                aria-label="Messages: 3 unread"
+                aria-label="Mensagens: {{ $qtdeMensagensNovas }} não lidas"
               >
-                <i class="bi bi-chat-text"></i>
-                <span class="navbar-badge badge text-bg-danger">3</span>
+              <i class="bi bi-chat-text"></i>
+                @if ($qtdeMensagensNovas > 0)
+                  <span class="navbar-badge badge text-bg-danger">{{ $qtdeMensagensNovas }}</span>
+                @endif
               </a>
-              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
-                <a href="#" class="dropdown-item">
-                  <!--begin::Message-->
-                  <div class="d-flex">
-                    <div class="flex-shrink-0">
-                      <img
-                        src="{{ asset('admin/assets/img/avatar5.png')}}"
-                        alt=""
-                        class="img-size-50 rounded-circle me-3"
-                      />
+               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+
+                @forelse ($mensagensNovas as $mensagem)
+                  <a href="{{ route('admin.mensagem.index', ['status' => 'novo', 'ler' => $mensagem->id_contato]) }}" class="dropdown-item">
+                    <!--begin::Message-->
+                    <div class="d-flex">
+                      <div class="flex-shrink-0">
+                        <i class="bi bi-person-circle fs-2 me-3" aria-hidden="true"></i>
+                      </div>
+                      <div class="flex-grow-1">
+                        <p class="dropdown-item-title">
+                          {{ $mensagem->nome_contato }}
+                          <span class="float-end fs-7">{{ $mensagem->assunto_contato }}</span>
+                        </p>
+                        <p class="fs-7">{{ \Illuminate\Support\Str::limit($mensagem->mensagem_contato, 40) }}</p>
+                        <p class="fs-7 text-secondary">
+                          <i class="bi bi-clock-fill me-1"></i>
+                          {{ \Illuminate\Support\Carbon::parse($mensagem->data_criacao_contato)->locale('pt_BR')->diffForHumans() }}
+                        </p>
+                      </div>
                     </div>
-                    <div class="flex-grow-1">
-                      <p class="dropdown-item-title">
-                        Brad Diesel
-                        <span class="float-end fs-7 text-danger"
-                          ><i class="bi bi-star-fill"></i
-                        ></span>
-                      </p>
-                      <p class="fs-7">Call me whenever you can...</p>
-                      <p class="fs-7 text-secondary">
-                        <i class="bi bi-clock-fill me-1"></i> 4 Hours Ago
-                      </p>
-                    </div>
-                  </div>
-                  <!--end::Message-->
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <!--begin::Message-->
-                  <div class="d-flex">
-                    <div class="flex-shrink-0">
-                      <img
-                        src="{{ asset('admin/assets/img/user8-128x128.jpg ') }}"
-                        alt=""
-                        class="img-size-50 rounded-circle me-3"
-                      />
-                    </div>
-                    <div class="flex-grow-1">
-                      <p class="dropdown-item-title">
-                        John Pierce
-                        <span class="float-end fs-7 text-secondary">
-                          <i class="bi bi-star-fill"></i>
-                        </span>
-                      </p>
-                      <p class="fs-7">I got your message bro</p>
-                      <p class="fs-7 text-secondary">
-                        <i class="bi bi-clock-fill me-1"></i> 4 Hours Ago
-                      </p>
-                    </div>
-                  </div>
-                  <!--end::Message-->
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <!--begin::Message-->
-                  <div class="d-flex">
-                    <div class="flex-shrink-0">
-                      <img
-                        src="{{ asset('admin/assets/img/user3-128x128.jpg') }}"
-                        alt=""
-                        class="img-size-50 rounded-circle me-3"
-                      />
-                    </div>
-                    <div class="flex-grow-1">
-                      <p class="dropdown-item-title">
-                        Nora Silvester
-                        <span class="float-end fs-7 text-warning">
-                          <i class="bi bi-star-fill"></i>
-                        </span>
-                      </p>
-                      <p class="fs-7">The subject goes here</p>
-                      <p class="fs-7 text-secondary">
-                        <i class="bi bi-clock-fill me-1"></i> 4 Hours Ago
-                      </p>
-                    </div>
-                  </div>
-                  <!--end::Message-->
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+
+                      <!--end::Message-->
+                  </a>
+                  <div class="dropdown-divider"></div>
+                @empty
+                  <span class="dropdown-item dropdown-header">Nenhuma mensagem nova</span>
+                  <div class="dropdown-divider"></div>
+                @endforelse
+                <a href="{{ route('admin.mensagem.index') }}" class="dropdown-item dropdown-footer">Ver todas as mensagens</a>
               </div>
             </li>
+
             <!--end::Messages Dropdown Menu-->
 
             <!--begin::Notifications Dropdown Menu-->
@@ -126,30 +79,31 @@
                 class="nav-link"
                 data-bs-toggle="dropdown"
                 href="#"
-                aria-label="Notifications: 15 unread"
+                aria-label="Notificações: {{ $qtdeNotificacoes }} pendentes"
               >
                 <i class="bi bi-bell-fill"></i>
-                <span class="navbar-badge badge text-bg-warning">15</span>
+                @if ($qtdeNotificacoes > 0)
+                  <span class="navbar-badge badge text-bg-warning">{{ $qtdeNotificacoes }}</span>
+                @endif
               </a>
               <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
-                <span class="dropdown-item dropdown-header">15 Notifications</span>
+                      <span class="dropdown-item dropdown-header">
+                  {{ $qtdeNotificacoes > 0 ? $qtdeNotificacoes . ' pendências' : 'Nada pendente por aqui' }}
+                </span>
+                @foreach ($notificacoes as $notificacao)
+                  <div class="dropdown-divider"></div>
+                  <a href="{{ $notificacao['link'] }}" class="dropdown-item">
+                    <i class="bi {{ $notificacao['icone'] }} me-2"></i> {{ $notificacao['texto'] }}
+                    @if ($notificacao['quando'])
+                      <span class="float-end text-secondary fs-7">
+                        {{ \Illuminate\Support\Carbon::parse($notificacao['quando'])->locale('pt_BR')->diffForHumans() }}
+                      </span>
+                    @endif
+                  </a>
+                @endforeach
+
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <i class="bi bi-envelope me-2"></i> 4 new messages
-                  <span class="float-end text-secondary fs-7">3 mins</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <i class="bi bi-people-fill me-2"></i> 8 friend requests
-                  <span class="float-end text-secondary fs-7">12 hours</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <i class="bi bi-file-earmark-fill me-2"></i> 3 new reports
-                  <span class="float-end text-secondary fs-7">2 days</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item dropdown-footer"> See All Notifications </a>
+                <a href="{{ route('dashboard') }}" class="dropdown-item dropdown-footer">Ir para o dashboard</a>
               </div>
             </li>
             <!--end::Notifications Dropdown Menu-->
@@ -160,7 +114,7 @@
                 class="nav-link"
                 href="#"
                 data-lte-toggle="fullscreen"
-                aria-label="Toggle fullscreen"
+                aria-label="Tela cheia"
               >
                 <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i>
                 <i data-lte-icon="minimize" class="bi bi-fullscreen-exit d-none"></i>
@@ -168,13 +122,13 @@
             </li>
             <!--end::Fullscreen Toggle-->
 
-            <!--begin::Color Mode Toggle (#6010)-->
+            <!--begin::Color Mode Toggle (o AdminLTE salva a escolha no navegador)-->
             <li class="nav-item dropdown">
               <a
                 class="nav-link"
                 href="#"
                 id="bd-theme"
-                aria-label="Toggle color scheme"
+                aria-label="Tema claro ou escuro"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
@@ -195,7 +149,7 @@
                     aria-pressed="false"
                   >
                     <i class="bi bi-sun-fill me-2"></i>
-                    Light
+                    Claro
                     <i class="bi bi-check-lg ms-auto d-none"></i>
                   </button>
                 </li>
@@ -207,7 +161,7 @@
                     aria-pressed="false"
                   >
                     <i class="bi bi-moon-fill me-2"></i>
-                    Dark
+                    Escuro
                     <i class="bi bi-check-lg ms-auto d-none"></i>
                   </button>
                 </li>
@@ -219,7 +173,7 @@
                     aria-pressed="true"
                   >
                     <i class="bi bi-circle-half me-2"></i>
-                    Auto
+                    Automático
                     <i class="bi bi-check-lg ms-auto d-none"></i>
                   </button>
                 </li>

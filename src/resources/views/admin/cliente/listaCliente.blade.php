@@ -128,14 +128,7 @@
                                 @endif
                             </td>
 
-                            <td>
-                                @if($cliente->senha_cliente)
-                                <span>
-                                    {{$cliente->senha_cliente}}
-
-                                </span>
-                                @endif
-                            </td>
+                          
 
                             <td>
                                 @if($cliente->foto_cliente)

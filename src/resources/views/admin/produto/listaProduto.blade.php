@@ -72,7 +72,8 @@
                       <th scope="col">Imagem</th>
                       <th scope="col">Preço</th>
                       <th scope="col">Descrição</th>
-                      <th scope="col">Status</th>                   
+                      <th scope="col">Status</th>    
+                     <th class="text-end">Ações</th>               
                     </tr>
                   </thead>
                   <tbody>

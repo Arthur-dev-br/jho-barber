@@ -33,30 +33,12 @@
                 <div class="card mb-4">
                   <!--begin::Card Header-->
                   <div class="card-header">
+                    <h3 class="card-title">Depoimentos enviados pelos clientes</h3>
                     <div class="row g-2 align-items-center">
                       <div class="col-12 col-md-4">
                        
                       </div>
-                      <div class="col-12 col-md-8">
-                        <div class="d-flex flex-wrap justify-content-md-end gap-2">
-                          <div class="input-group input-group-sm w-auto">
-                            <span class="input-group-text">
-                              <i class="bi bi-search" aria-hidden="true"></i>
-                            </span>
-                            <input type="search" id="user-search" class="form-control" placeholder="Search users" aria-label="Search users" style="width: 180px">
-                          </div>
-                          <select id="user-role-filter" class="form-select form-select-sm w-auto" aria-label="Filter by role">
-                            <option value="all" selected="">Todos</option>
-                            <option value="Ativos">Ativos</option>
-                            <option value="Inativos">Inativos</option>
-                            
-                          </select>
-                          <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal-add-user">
-                            <i class="bi bi-person-plus-fill me-1" aria-hidden="true"> </i>
-                            New user
-                          </button>
-                        </div>
-                      </div>
+                     
                     </div>
                   </div>
                   <!--end::Card Header-->
@@ -70,7 +52,9 @@
                             <th scope="col">Número do cliente</th>
                             <th scope="col">Descrição</th>
                             <th scope="col">Nota</th>                            
-                            <th scope="col">Status</th>                                                       
+                            <th scope="col">Status</th> 
+                            <th class="text-end">Ações</th>                    
+                                             
                           </tr>
                         </thead>
                    <tbody>
@@ -91,11 +75,12 @@
                                 {{ $depoimento->descricao_depoimento }}
                              </span>
                             </td>
-                            {{--Nota--}}
-                             <td>
-                              <span class="badge text-bg-success"> 
-                                {{ $depoimento->nota_depoimento }}
-                             </span>
+                            {{-- Nota --}}
+                            <td class="text-nowrap">
+                                @for ($i = 1; $i <= 5; $i++)
+                                  <i class="bi {{ $i <= $depoimento->nota_depoimento ? 'bi-star-fill' : 'bi-star' }}"
+                                    aria-hidden="true"></i>
+                                @endfor
                             </td>
 
                             {{--Status--}}
@@ -152,7 +137,11 @@
                   <!--begin::Card Footer-->
                   <div class="card-footer clearfix">
                     <div class="float-start pt-1 fs-7 text-body-secondary">
-                      Total de depoimentos: {{$listaDepoimento->count()}} 
+                        Aprovados:
+                                <strong>
+                                    {{ $listaDepoimento->where('status_depoimento', 'APROVADO')->count() }}
+                                </strong>
+                                de {{ $listaDepoimento->count() }}
                     </div>
                    
                   </div>
