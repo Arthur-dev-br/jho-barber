@@ -13,9 +13,10 @@ class ProdutoController extends Controller
    public function index()
     {
         $listaProduto = Produto::with('categoria')
-            ->orderByDesc('id_produto')
-            ->get();
+            ->orderByDesc('id_produto', 'desc')
+            ->paginate(6);
 
         return view('admin.produto.index', compact('listaProduto'));
     }
+
 }

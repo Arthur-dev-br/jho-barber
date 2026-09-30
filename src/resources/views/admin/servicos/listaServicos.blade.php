@@ -73,6 +73,7 @@
                             <th scope="col">Valor</th>
                             <th scope="col">Imagem</th>
                             <th scope="col">Status</th>
+                            <th scope="col">Ações</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -147,6 +148,7 @@
                                     Sem imagem
                                 </span>
                              @endif
+                            </td>
 
                            {{--Status--}}
                             <td>
@@ -193,6 +195,10 @@
                     <div class="float-start pt-1 fs-7 text-body-secondary">
                      Total de serviços: {{$listaServicos->count()}}
                     </div>
+    
+                  <div class="float-end">
+                    @include('partials.admin.paginacao', ['paginacao' => $listaServicos])
+                  </div>
                     
                   </div>
                   <!--end::Card Footer-->

@@ -11,8 +11,10 @@ class CategoriaServicosController extends Controller
     // Listar todos as categorias cadastradas
     public function index()
     {
-        $listaCategoriaServicos = CategoriaServicos::orderByDesc('id_categoria_servicos')->get();
+        $listaCategoriaServicos = CategoriaServicos::orderByDesc('id_categoria_servicos','desc')
+        ->paginate(6);
 
         return view('admin.categoria_servicos.index', compact('listaCategoriaServicos'));
     }
 }
+

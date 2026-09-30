@@ -11,8 +11,10 @@ class CategoriaController extends Controller
     // Listar todos as categorias cadastradas
     public function index()
     {
-        $listaCategoria = Categoria::orderByDesc('id_categoria')->get();
+        $listaCategoria = Categoria::orderByDesc('id_categoria', 'desc')
+        ->paginate(6);
 
         return view('admin.categoria.index', compact('listaCategoria'));
+        
     }
 }

@@ -12,10 +12,9 @@ class ServicosController extends Controller
     {
         
         $listaServicos = Servicos::with('categoria_servicos')
-            ->orderByDesc('id_servicos')
-            ->get();
+    ->orderBy('id_servicos', 'desc')
+    ->paginate(6);
 
-
-        return view('admin.servicos.index', compact('listaServicos'));
+    return view('admin.servicos.index', compact('listaServicos'));
     }
 }

@@ -35,7 +35,7 @@
             <div class="card-header">
               <div class="row g-2 align-items-center">
                 <div class="col-12 col-md-4">
-                  <h3 class="card-title">Diretório do usuário</h3>
+                  <h3 class="card-title">Produtos cadastrados</h3>
                 </div>
                 <div class="col-12 col-md-8">
                   <div class="d-flex flex-wrap justify-content-md-end gap-2">
@@ -43,7 +43,7 @@
                       <span class="input-group-text">
                         <i class="bi bi-search" aria-hidden="true"></i>
                       </span>
-                      <input type="search" id="user-search" class="form-control" placeholder="Search users" aria-label="Search users" style="width: 180px">
+                      <input type="search" id="user-search" class="form-control" placeholder="Pesquisar produtos" aria-label="Search users" style="width: 180px">
                     </div>
                     <select id="user-role-filter" class="form-select form-select-sm w-auto" aria-label="Filter by role">
                       <option value="all" selected="">Todos</option>
@@ -53,7 +53,7 @@
                     </select>
                     <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal-add-user">
                       <i class="bi bi-person-plus-fill me-1" aria-hidden="true"> </i>
-                      New user
+                      Novo produto
                     </button>
                   </div>
                 </div>
@@ -165,31 +165,11 @@
             <!--begin::Card Footer-->
             <div class="card-footer clearfix">
               <div class="float-start pt-1 fs-7 text-body-secondary">
-                Pagina 1 de 9 de  registros
+                Total de produtos: {{$listaProduto->count()}}
               </div>
-              <ul class="pagination pagination-sm m-0 float-end">
-                <li class="page-item disabled">
-                  <a class="page-link" href="#" aria-label="Previous"> « </a>
-                </li>
-                <li class="page-item active">
-                  <a class="page-link" href="#">1</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">2</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">3</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">4</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">5</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Next"> » </a>
-                </li>
-              </ul>
+               <div class="float-end">
+                    @include('partials.admin.paginacao', ['paginacao' => $listaProduto])
+                </div>
             </div>
             <!--end::Card Footer-->
           </div>
@@ -199,34 +179,41 @@
       </div>
       <!--end::Row-->
 
-      <!--begin::Add User Modal-->
-      <div class="modal fade" id="modal-add-user" tabindex="-1" aria-labelledby="modal-add-user-label" aria-hidden="true">
+      {{-- INICIO - MODAL CADASTRO PRODUTO --}}
+      <div 
+       class="modal fade" 
+       id="modal-add-user"
+       tabindex="-1" aria-labelledby="modal-add-user-label" aria-hidden="true"
+      >
         <div class="modal-dialog">
           <div class="modal-content">
             <form>
               <div class="modal-header">
-                <h5 class="modal-title" id="modal-add-user-label">Add new user</h5>
+                <h5 class="modal-title" id="modal-add-user-label">Cadastrar novo produto</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <div class="mb-3">
-                  <label for="new-user-name" class="form-label"> Full name <span class="required-indicator sr-only"> (required)</span></label>
-                  <input type="text" class="form-control" id="new-user-name" placeholder="e.g. Jane Doe" required="">
+                  <label for="new-user-name" class="form-label"> Nome produto <span class="required-indicator sr-only"> (required)</span></label>
+                  <input type="text" class="form-control" id="new-user-name" placeholder="Gels" required="">
                 </div>
+
                 <div class="mb-3">
-                  <label for="new-user-email" class="form-label"> Email address <span class="required-indicator sr-only"> (required)</span></label>
-                  <input type="email" class="form-control" id="new-user-email" placeholder="name@example.com" required="">
-                  <div class="form-text">The invitation will be sent to this address.</div>
-                </div>
-                <div class="mb-3">
-                  <label for="new-user-role" class="form-label"> Role </label>
+                  <label for="new-user-role" class="form-label"> Categoria </label>
                   <select id="new-user-role" class="form-select">
-                    <option selected="">Subscriber</option>
-                    <option>Author</option>
-                    <option>Editor</option>
-                    <option>Administrator</option>
+                    <option selected="">Shampoos</option>
+                    <option>Balms</option>
+                    <option>Gels</option>
+                    <option>Pomadas</option>
                   </select>
                 </div>
+
+                <div class="mb-3">
+                  <label for="new-user-email" class="form-label"> Descrição<span class="required-indicator sr-only"> (required)</span></label>
+                  <input type="email" class="form-control" id="new-user-email" placeholder="Pomadas excepcionais" required="">
+                  
+                </div>
+                
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="new-user-welcome" checked="">
                   <label class="form-check-label" for="new-user-welcome">

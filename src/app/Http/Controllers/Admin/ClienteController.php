@@ -10,8 +10,11 @@ class ClienteController extends Controller
     // Listar todos as imagens da galeria cadastradas
     public function index()
     {
-        $listaCliente= Cliente::orderByDesc('id_cliente')->get();
+        $listaCliente= Cliente::orderByDesc('id_cliente', 'desc')
+        ->paginate(6);
 
         return view('admin.cliente.index', compact('listaCliente'));
+
+        
     }
 }

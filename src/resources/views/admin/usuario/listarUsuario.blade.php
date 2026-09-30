@@ -193,6 +193,10 @@
                       <strong>
                         {{ $usuarios-> count()}}
                       </strong>
+
+                
+
+
                     </div>
                     
                   </div>

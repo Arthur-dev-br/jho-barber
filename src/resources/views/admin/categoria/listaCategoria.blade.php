@@ -140,6 +140,10 @@
                     <div class="float-start pt-1 fs-7 text-body-secondary">
                      Total de categorias:{{$listaCategoria->count()}}
                     </div>
+
+                  <div class="float-end">
+                    @include('partials.admin.paginacao', ['paginacao' => $listaCategoria])
+                  </div>
                     
                   </div>
                   <!--end::Card Footer-->

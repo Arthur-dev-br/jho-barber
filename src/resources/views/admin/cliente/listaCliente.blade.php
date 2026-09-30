@@ -254,7 +254,11 @@
                     <div class="float-start pt-1 fs-7 text-body-secondary">
                       Total de clientes: {{$listaCliente->count()}} 
                     </div>
-                    </ul>
+                    
+                  <div class="float-end">
+                    @include('partials.admin.paginacao', ['paginacao' => $listaCliente])
+                  </div>
+
                   </div>
                   <!--end::Card Footer-->
                 </div>
