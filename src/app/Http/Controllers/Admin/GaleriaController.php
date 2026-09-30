@@ -131,6 +131,7 @@ class GaleriaController extends Controller
 
         try {
 
+
             // Nome atual
             $nomeSlug = Str::slug($dados['nome_galeria']);
 
@@ -142,6 +143,8 @@ class GaleriaController extends Controller
 
             // Caminho físico da imagem atual
             $imgAntiga = public_path('jho_barber/assets/' . $galeria->imagem_galeria);
+
+          
 
             // CASO 1: NOVA IMAGEM
             if ($request->hasFile('imagem_galeria')) {
@@ -180,6 +183,8 @@ class GaleriaController extends Controller
                     $caminhoArquivo = 'galeria/' . $nomeImg;
                 }
             }
+
+           
 
             // ATUALIZA NO BANCO
             $galeria->update([

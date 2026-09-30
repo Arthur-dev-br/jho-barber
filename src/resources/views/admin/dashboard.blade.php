@@ -6,6 +6,8 @@
 
 @include('admin.cards')
 
+@include('admin.graficos')
+
 
 
 @endsection
